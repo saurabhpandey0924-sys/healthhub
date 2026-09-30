@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HealthHub — Your complete health & wellness companion. BMI Calculator, Fitness Tools, Nutrition Tips, Disease Awareness & more.">
+    <meta name="keywords" content="health, fitness, BMI calculator, nutrition, exercise, wellness, mental health">
+    <meta name="author" content="HealthHub CEP Project">
+    <title>HealthHub — Your Complete Health & Wellness Companion</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body>
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-heart">
+            <div class="preloader-ring"></div>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <p class="preloader-text">HealthHub</p>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="nav-logo">
+                <div class="nav-logo-icon">🏥</div>
+                <span class="nav-logo-text">HealthHub</span>
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+                <a href="#calculators" class="nav-link" data-section="calculators">Tools</a>
+                <a href="#exercises" class="nav-link" data-section="exercises">Exercise</a>
+                <a href="#nutrition" class="nav-link" data-section="nutrition">Nutrition</a>
+                <a href="#mental-health" class="nav-link" data-section="mental-health">Mind</a>
+                <a href="#first-aid" class="nav-link" data-section="first-aid">First Aid</a>
+                <a href="#diseases" class="nav-link" data-section="diseases">Diseases</a>
+                <a href="#sleep" class="nav-link" data-section="sleep">Sleep</a>
+                <a href="#yoga" class="nav-link" data-section="yoga">Yoga</a>
+                <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#hero" class="nav-link" data-section="hero">Home</a>
+        <a href="#calculators" class="nav-link" data-section="calculators">Tools</a>
+        <a href="#exercises" class="nav-link" data-section="exercises">Exercise</a>
+        <a href="#nutrition" class="nav-link" data-section="nutrition">Nutrition</a>
+        <a href="#mental-health" class="nav-link" data-section="mental-health">Mind</a>
+        <a href="#first-aid" class="nav-link" data-section="first-aid">First Aid</a>
+        <a href="#diseases" class="nav-link" data-section="diseases">Diseases</a>
+        <a href="#sleep" class="nav-link" data-section="sleep">Sleep</a>
+        <a href="#yoga" class="nav-link" data-section="yoga">Yoga</a>
+        <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero section" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>💚</span> Your Health Companion
+                </div>
+                <h1 class="hero-title">
+                    Your Complete<br>
+                    <span class="gradient-text">Health &amp; Wellness</span><br>
+                    Companion
+                </h1>
+                <p class="hero-description">
+                    Track your BMI, plan workouts, learn nutrition, practice mindfulness, and stay informed about health — all in one beautiful platform.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#calculators" class="btn btn-primary btn-lg">🧮 Explore Tools</a>
+                    <a href="#nutrition" class="btn btn-secondary btn-lg">🥗 Health Tips</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="6">0</div>
+                        <div class="hero-stat-label">Health Tools</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="50">0</div>
+                        <div class="hero-stat-label">Wellness Tips</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-count="8">0</div>
+                        <div class="hero-stat-label">Categories</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-orb">
+                    <div class="hero-float-icon">💪</div>
+                    <div class="hero-float-icon">🧠</div>
+                    <div class="hero-float-icon">🥗</div>
+                    <div class="hero-float-icon">🧘</div>
+                    <div class="hero-float-icon">😴</div>
+                    <div class="hero-float-icon">💊</div>
+                    <div class="hero-center-icon">❤️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CALCULATORS SECTION ==================== -->
+    <section class="section calculators-section" id="calculators">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">🧮 Health Tools</div>
+                <h2 class="section-title">Health Calculators</h2>
+                <p class="section-subtitle">Six powerful interactive tools to measure, track, and understand your health metrics.</p>
+            </div>
+
+            <div class="calc-grid">
+                <!-- BMI Calculator Card -->
+                <div class="calc-card calc-featured animate-on-scroll hover-lift" data-calc="bmi" data-color="teal">
+                    <div class="card-icon teal">⚖️</div>
+                    <div class="card-title">BMI Calculator</div>
+                    <div class="card-text">Calculate your Body Mass Index and discover your health category with personalized recommendations.</div>
+                    <div class="tag tag-teal" style="margin-top:12px">⭐ Featured</div>
+                </div>
+
+                <!-- Calorie Calculator Card -->
+                <div class="calc-card animate-on-scroll delay-1 hover-lift" data-calc="calorie" data-color="amber">
+                    <div class="card-icon amber">🔥</div>
+                    <div class="card-title">Calorie Calculator</div>
+                    <div class="card-text">Find your daily calorie needs based on your activity level and goals.</div>
+                </div>
+
+                <!-- Water Intake Card -->
+                <div class="calc-card animate-on-scroll delay-2 hover-lift" data-calc="water" data-color="sky">
+                    <div class="card-icon sky">💧</div>
+                    <div class="card-title">Water Intake Calculator</div>
+                    <div class="card-text">Know exactly how much water your body needs each day.</div>
+                </div>
+
+                <!-- Heart Rate Card -->
+                <div class="calc-card animate-on-scroll delay-3 hover-lift" data-calc="heartrate" data-color="rose">
+                    <div class="card-icon rose">❤️</div>
+                    <div class="card-title">Heart Rate Zones</div>
+                    <div class="card-text">Calculate your target heart rate zones for optimal training.</div>
+                </div>
+
+                <!-- Body Fat Card -->
+                <div class="calc-card animate-on-scroll delay-4 hover-lift" data-calc="bodyfat" data-color="violet">
+                    <div class="card-icon violet">📊</div>
+                    <div class="card-title">Body Fat %</div>
+                    <div class="card-text">Estimate your body fat percentage using the US Navy method.</div>
+                </div>
+
+                <!-- Ideal Weight Card -->
+                <div class="calc-card animate-on-scroll delay-5 hover-lift" data-calc="idealweight" data-color="emerald">
+                    <div class="card-icon emerald">🎯</div>
+                    <div class="card-title">Ideal Weight</div>
+                    <div class="card-text">Find your ideal weight range using 4 scientific formulas.</div>
+                </div>
+            </div>
+
+            <!-- Calculator Panels (shown when card clicked) -->
+            <div id="calculatorPanels">
+                <!-- BMI Panel -->
+                <div class="calculator-panel" id="panel-bmi">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">⚖️ BMI Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="form-radio-group">
+                                    <div class="form-radio">
+                                        <input type="radio" name="bmi-gender" id="bmi-male" value="male" checked>
+                                        <label for="bmi-male">👨 Male</label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <input type="radio" name="bmi-gender" id="bmi-female" value="female">
+                                        <label for="bmi-female">👩 Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="bmi-age">Age</label>
+                                <input type="number" class="form-input" id="bmi-age" placeholder="Enter your age" min="2" max="120">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="bmi-height">Height (cm)</label>
+                                    <input type="number" class="form-input" id="bmi-height" placeholder="e.g., 170" min="50" max="300">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="bmi-weight">Weight (kg)</label>
+                                    <input type="number" class="form-input" id="bmi-weight" placeholder="e.g., 70" min="10" max="500">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateBMI()">Calculate BMI</button>
+                        </div>
+                        <div class="calc-results" id="bmi-results">
+                            <div class="gauge bmi-gauge">
+                                <svg viewBox="0 0 100 100">
+                                    <circle class="gauge-bg" cx="50" cy="50" r="42"/>
+                                    <circle class="gauge-fill" id="bmi-gauge-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264" stroke="var(--accent-teal)"/>
+                                </svg>
+                                <div class="gauge-text">
+                                    <div class="gauge-value" id="bmi-value">—</div>
+                                    <div class="gauge-unit">BMI</div>
+                                </div>
+                            </div>
+                            <div class="result-category" id="bmi-category" style="display:none"></div>
+                            <div class="bmi-scale">
+                                <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-sky)"></div> Underweight &lt;18.5</div>
+                                <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-emerald)"></div> Normal 18.5-24.9</div>
+                                <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-amber)"></div> Overweight 25-29.9</div>
+                                <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-rose)"></div> Obese 30+</div>
+                            </div>
+                            <div class="calc-tips" id="bmi-tips" style="display:none">
+                                <h4>💡 Health Tips</h4>
+                                <ul id="bmi-tips-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calorie Panel -->
+                <div class="calculator-panel" id="panel-calorie">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">🔥 Calorie Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="form-radio-group">
+                                    <div class="form-radio">
+                                        <input type="radio" name="cal-gender" id="cal-male" value="male" checked>
+                                        <label for="cal-male">👨 Male</label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <input type="radio" name="cal-gender" id="cal-female" value="female">
+                                        <label for="cal-female">👩 Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cal-age">Age</label>
+                                <input type="number" class="form-input" id="cal-age" placeholder="Enter your age" min="2" max="120">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="cal-height">Height (cm)</label>
+                                    <input type="number" class="form-input" id="cal-height" placeholder="e.g., 170">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="cal-weight">Weight (kg)</label>
+                                    <input type="number" class="form-input" id="cal-weight" placeholder="e.g., 70">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="cal-activity">Activity Level</label>
+                                <select class="form-select" id="cal-activity">
+                                    <option value="1.2">Sedentary (office job, little exercise)</option>
+                                    <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
+                                    <option value="1.55" selected>Moderately Active (exercise 3-5 days/week)</option>
+                                    <option value="1.725">Very Active (hard exercise 6-7 days/week)</option>
+                                    <option value="1.9">Extra Active (very hard exercise, physical job)</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateCalories()">Calculate Calories</button>
+                        </div>
+                        <div class="calc-results" id="calorie-results">
+                            <div class="result-box" style="border:none;background:transparent;padding:0">
+                                <div class="result-value" id="cal-maintain" style="color:var(--accent-teal)">—</div>
+                                <div class="result-label">Calories/day to maintain weight</div>
+                            </div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;margin-top:24px">
+                                <div class="result-box">
+                                    <div class="result-value" id="cal-lose" style="font-size:var(--fs-3xl);color:var(--accent-emerald)">—</div>
+                                    <div class="result-label">To Lose Weight</div>
+                                </div>
+                                <div class="result-box">
+                                    <div class="result-value" id="cal-gain" style="font-size:var(--fs-3xl);color:var(--accent-amber)">—</div>
+                                    <div class="result-label">To Gain Weight</div>
+                                </div>
+                            </div>
+                            <div style="width:100%;margin-top:24px">
+                                <h4 style="font-family:var(--font-heading);margin-bottom:12px">Macronutrient Breakdown</h4>
+                                <div class="macro-bar" id="macro-bar">
+                                    <div class="macro-segment" id="macro-protein" style="width:30%;background:var(--accent-teal)">Protein</div>
+                                    <div class="macro-segment" id="macro-carbs" style="width:45%;background:var(--accent-amber)">Carbs</div>
+                                    <div class="macro-segment" id="macro-fats" style="width:25%;background:var(--accent-violet)">Fats</div>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:var(--fs-xs);color:var(--text-muted)" id="macro-grams">
+                                    <span id="macro-protein-g">Protein: —g</span>
+                                    <span id="macro-carbs-g">Carbs: —g</span>
+                                    <span id="macro-fats-g">Fats: —g</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Water Intake Panel -->
+                <div class="calculator-panel" id="panel-water">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">💧 Water Intake Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label" for="water-weight">Weight (kg)</label>
+                                <input type="number" class="form-input" id="water-weight" placeholder="e.g., 70" min="20" max="300">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="water-activity">Activity Level</label>
+                                <select class="form-select" id="water-activity">
+                                    <option value="0">Sedentary (little/no exercise)</option>
+                                    <option value="0.35">Lightly Active (light exercise)</option>
+                                    <option value="0.7" selected>Moderately Active (regular exercise)</option>
+                                    <option value="1.05">Very Active (intense exercise)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="water-climate">Climate</label>
+                                <select class="form-select" id="water-climate">
+                                    <option value="0">Cool / Temperate</option>
+                                    <option value="0.35" selected>Moderate / Warm</option>
+                                    <option value="0.7">Hot / Tropical</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateWater()">Calculate Water Intake</button>
+                        </div>
+                        <div class="calc-results" id="water-results">
+                            <div class="water-glass">
+                                <div class="water-level" id="water-level" style="height:0%"></div>
+                            </div>
+                            <div class="result-value" id="water-liters" style="color:var(--accent-sky)">—</div>
+                            <div class="result-label">Liters per day</div>
+                            <div style="margin-top:16px;font-size:var(--fs-2xl);font-weight:700;color:var(--text-primary)" id="water-glasses">— glasses</div>
+                            <div class="result-label">of 250ml each</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heart Rate Zones Panel -->
+                <div class="calculator-panel" id="panel-heartrate">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">❤️ Heart Rate Zone Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label" for="hr-age">Age</label>
+                                <input type="number" class="form-input" id="hr-age" placeholder="Enter your age" min="10" max="120">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="hr-resting">Resting Heart Rate (bpm)</label>
+                                <input type="number" class="form-input" id="hr-resting" placeholder="e.g., 70" min="30" max="200">
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateHeartRate()">Calculate Zones</button>
+                        </div>
+                        <div class="calc-results" id="hr-results">
+                            <div class="hr-zones" id="hr-zones">
+                                <div class="hr-zone" style="background:rgba(56,189,248,0.1)"><span class="hr-zone-name" style="color:var(--accent-sky)">Zone 1</span><span>Recovery</span><span class="hr-zone-range">—</span><div class="hr-zone-bar" style="background:var(--accent-sky)"></div></div>
+                                <div class="hr-zone" style="background:rgba(16,185,129,0.1)"><span class="hr-zone-name" style="color:var(--accent-emerald)">Zone 2</span><span>Fat Burn</span><span class="hr-zone-range">—</span><div class="hr-zone-bar" style="background:var(--accent-emerald)"></div></div>
+                                <div class="hr-zone" style="background:rgba(245,158,11,0.1)"><span class="hr-zone-name" style="color:var(--accent-amber)">Zone 3</span><span>Aerobic</span><span class="hr-zone-range">—</span><div class="hr-zone-bar" style="background:var(--accent-amber)"></div></div>
+                                <div class="hr-zone" style="background:rgba(251,146,60,0.1)"><span class="hr-zone-name" style="color:var(--accent-orange)">Zone 4</span><span>Anaerobic</span><span class="hr-zone-range">—</span><div class="hr-zone-bar" style="background:var(--accent-orange)"></div></div>
+                                <div class="hr-zone" style="background:rgba(244,63,94,0.1)"><span class="hr-zone-name" style="color:var(--accent-rose)">Zone 5</span><span>Maximum</span><span class="hr-zone-range">—</span><div class="hr-zone-bar" style="background:var(--accent-rose)"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body Fat Panel -->
+                <div class="calculator-panel" id="panel-bodyfat">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">📊 Body Fat % Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="form-radio-group">
+                                    <div class="form-radio">
+                                        <input type="radio" name="bf-gender" id="bf-male" value="male" checked>
+                                        <label for="bf-male">👨 Male</label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <input type="radio" name="bf-gender" id="bf-female" value="female">
+                                        <label for="bf-female">👩 Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="bf-height">Height (cm)</label>
+                                    <input type="number" class="form-input" id="bf-height" placeholder="e.g., 170">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="bf-weight">Weight (kg)</label>
+                                    <input type="number" class="form-input" id="bf-weight" placeholder="e.g., 70">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="bf-waist">Waist (cm)</label>
+                                    <input type="number" class="form-input" id="bf-waist" placeholder="e.g., 80">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="bf-neck">Neck (cm)</label>
+                                    <input type="number" class="form-input" id="bf-neck" placeholder="e.g., 38">
+                                </div>
+                            </div>
+                            <div class="form-group" id="bf-hip-group" style="display:none">
+                                <label class="form-label" for="bf-hip">Hip (cm) — for women</label>
+                                <input type="number" class="form-input" id="bf-hip" placeholder="e.g., 95">
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateBodyFat()">Calculate Body Fat</button>
+                        </div>
+                        <div class="calc-results" id="bf-results">
+                            <div class="result-value" id="bf-value" style="color:var(--accent-violet)">—%</div>
+                            <div class="result-label">Body Fat Percentage</div>
+                            <div class="result-category" id="bf-category" style="display:none"></div>
+                            <div class="body-composition" style="margin-top:24px">
+                                <div class="body-comp-bar">
+                                    <div class="body-comp-fat" id="bf-fat-bar" style="width:0%">Fat</div>
+                                    <div class="body-comp-lean" id="bf-lean-bar">Lean</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ideal Weight Panel -->
+                <div class="calculator-panel" id="panel-idealweight">
+                    <div class="calculator-panel-header">
+                        <div class="calculator-panel-title">🎯 Ideal Weight Calculator</div>
+                        <div class="calculator-panel-close" data-close-panel>&times;</div>
+                    </div>
+                    <div class="calculator-panel-body">
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="form-radio-group">
+                                    <div class="form-radio">
+                                        <input type="radio" name="iw-gender" id="iw-male" value="male" checked>
+                                        <label for="iw-male">👨 Male</label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <input type="radio" name="iw-gender" id="iw-female" value="female">
+                                        <label for="iw-female">👩 Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="iw-height">Height (cm)</label>
+                                <input type="number" class="form-input" id="iw-height" placeholder="e.g., 170" min="100" max="250">
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%" onclick="calculateIdealWeight()">Calculate Ideal Weight</button>
+                        </div>
+                        <div class="calc-results" id="iw-results">
+                            <div class="weight-comparison" id="iw-comparison">
+                                <div class="weight-method"><div class="weight-method-name">Devine</div><div class="weight-method-value" id="iw-devine">—</div></div>
+                                <div class="weight-method"><div class="weight-method-name">Robinson</div><div class="weight-method-value" id="iw-robinson">—</div></div>
+                                <div class="weight-method"><div class="weight-method-name">Miller</div><div class="weight-method-value" id="iw-miller">—</div></div>
+                                <div class="weight-method"><div class="weight-method-name">Hamwi</div><div class="weight-method-value" id="iw-hamwi">—</div></div>
+                            </div>
+                            <div class="result-box" style="margin-top:16px">
+                                <div class="result-value" id="iw-average" style="font-size:var(--fs-3xl);color:var(--accent-emerald)">—</div>
+                                <div class="result-label">Average Ideal Weight (kg)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXERCISES SECTION ==================== -->
+    <section class="section" id="exercises">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">🏋️ Fitness</div>
+                <h2 class="section-title">Exercise & Workout Guides</h2>
+                <p class="section-subtitle">Build strength, boost endurance, and stay flexible with our curated exercise library.</p>
+            </div>
+
+            <div class="filter-group" id="exercise-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cardio">🏃 Cardio</button>
+                <button class="filter-btn" data-filter="strength">💪 Strength</button>
+                <button class="filter-btn" data-filter="hiit">🔥 HIIT</button>
+                <button class="filter-btn" data-filter="flexibility">🧘 Flexibility</button>
+            </div>
+
+            <div class="grid grid-3" id="exercise-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Workout Plans -->
+            <div class="tabs" style="margin-top:48px" id="workout-tabs">
+                <button class="tab-btn active" data-tab="beginner">🌱 Beginner Full Body</button>
+                <button class="tab-btn" data-tab="fatBurn">🔥 Fat Burn Program</button>
+            </div>
+            <div id="workout-plans">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NUTRITION SECTION ==================== -->
+    <section class="section" id="nutrition">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">🥗 Nutrition</div>
+                <h2 class="section-title">Nutrition & Diet Guide</h2>
+                <p class="section-subtitle">Fuel your body right with balanced nutrition and smart food choices.</p>
+            </div>
+
+            <!-- Balanced Diet Plate -->
+            <div class="animate-on-scroll" style="text-align:center">
+                <div class="nutrition-plate">
+                    <div class="nutrition-plate-center">
+                        <div class="nutrition-plate-label">Balanced<br>Diet</div>
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:32px">
+                    <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-teal)"></div> Proteins (30%)</div>
+                    <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-amber)"></div> Carbs (25%)</div>
+                    <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-rose)"></div> Fats (20%)</div>
+                    <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-violet)"></div> Vitamins (15%)</div>
+                    <div class="bmi-scale-item"><div class="bmi-scale-dot" style="background:var(--accent-sky)"></div> Minerals (10%)</div>
+                </div>
+            </div>
+
+            <!-- Food Tabs -->
+            <div class="tabs" id="food-tabs">
+                <button class="tab-btn active" data-tab="proteins">🥩 Proteins</button>
+                <button class="tab-btn" data-tab="carbs">🍚 Carbs</button>
+                <button class="tab-btn" data-tab="fats">🥑 Fats</button>
+                <button class="tab-btn" data-tab="vitamins">🍊 Vitamins</button>
+            </div>
+            <div id="food-grid" class="grid grid-2">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Superfoods -->
+            <h3 style="text-align:center;margin-top:48px;margin-bottom:24px;font-family:var(--font-heading)" class="animate-on-scroll">⭐ Superfoods Spotlight</h3>
+            <div class="superfood-grid" id="superfood-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Meal Plan -->
+            <h3 style="text-align:center;margin-top:48px;margin-bottom:24px;font-family:var(--font-heading)" class="animate-on-scroll">📋 Sample Meal Plan</h3>
+            <div class="meal-plan" id="meal-plan">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MENTAL HEALTH SECTION ==================== -->
+    <section class="section mental-health-section" id="mental-health">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);color:var(--accent-violet)">🧠 Mental Health</div>
+                <h2 class="section-title" style="background:var(--gradient-mental);-webkit-background-clip:text;background-clip:text">Mental Health & Wellness</h2>
+                <p class="section-subtitle">Your mental health matters. Explore tools, tips, and resources for a calmer mind.</p>
+            </div>
+
+            <!-- Daily Affirmation -->
+            <div class="affirmation-card animate-on-scroll">
+                <p style="font-size:var(--fs-sm);color:var(--accent-violet);margin-bottom:8px">✨ Today's Affirmation</p>
+                <p class="affirmation-text" id="affirmation-text">"I am worthy of good health and happiness."</p>
+                <p class="affirmation-refresh" onclick="refreshAffirmation()">🔄 New Affirmation</p>
+            </div>
+
+            <!-- Breathing Exercise -->
+            <h3 style="text-align:center;margin-bottom:8px;font-family:var(--font-heading)" class="animate-on-scroll">🌬️ Breathing Exercise</h3>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px" class="animate-on-scroll">Follow the circle — breathe in as it expands, breathe out as it contracts.</p>
+            <div class="breathing-tool">
+                <div class="breathing-circle" id="breathing-circle">
+                    <span class="breathing-text" id="breathing-text">Start</span>
+                </div>
+                <div class="breathing-timer" id="breathing-timer">0:00</div>
+                <button class="btn btn-primary" id="breathing-btn" onclick="toggleBreathing()">▶ Start Breathing</button>
+            </div>
+
+            <!-- Mental Health Tips -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading)" class="animate-on-scroll">💡 Mental Wellness Tips</h3>
+            <div class="grid grid-2" id="mental-tips-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Warning Signs -->
+            <div class="animate-on-scroll" style="margin-top:48px">
+                <h3 style="text-align:center;margin-bottom:24px;font-family:var(--font-heading);color:var(--accent-amber)">⚠️ Warning Signs to Watch For</h3>
+                <div class="card" style="max-width:600px;margin:0 auto">
+                    <ul id="warning-signs-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Helplines -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading)" class="animate-on-scroll">📞 Helpline Numbers</h3>
+            <div class="helpline-grid" id="helpline-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FIRST AID SECTION ==================== -->
+    <section class="section first-aid-section" id="first-aid">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge" style="background:rgba(244,63,94,0.1);border-color:rgba(244,63,94,0.2);color:var(--accent-rose)">🩹 First Aid</div>
+                <h2 class="section-title" style="background:var(--gradient-danger);-webkit-background-clip:text;background-clip:text">First Aid Guide</h2>
+                <p class="section-subtitle">Know what to do in an emergency. Step-by-step first aid instructions for common situations.</p>
+            </div>
+
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="first-aid-search" placeholder="Search first aid topics...">
+            </div>
+
+            <div id="first-aid-list">
+                <!-- Populated by JS (Accordions) -->
+            </div>
+
+            <!-- Emergency Numbers -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading);color:var(--accent-rose)" class="animate-on-scroll">🚨 Emergency Numbers (India)</h3>
+            <div class="emergency-numbers">
+                <div class="emergency-card animate-on-scroll"><div>📞</div><div class="emergency-number">112</div><div class="emergency-label">Universal Emergency</div></div>
+                <div class="emergency-card animate-on-scroll delay-1"><div>🚑</div><div class="emergency-number">102 / 108</div><div class="emergency-label">Ambulance</div></div>
+                <div class="emergency-card animate-on-scroll delay-2"><div>🚒</div><div class="emergency-number">101</div><div class="emergency-label">Fire Brigade</div></div>
+                <div class="emergency-card animate-on-scroll delay-3"><div>👮</div><div class="emergency-number">100</div><div class="emergency-label">Police</div></div>
+                <div class="emergency-card animate-on-scroll delay-4"><div>👩</div><div class="emergency-number">1091</div><div class="emergency-label">Women Helpline</div></div>
+                <div class="emergency-card animate-on-scroll delay-5"><div>👶</div><div class="emergency-number">1098</div><div class="emergency-label">Child Helpline</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DISEASES SECTION ==================== -->
+    <section class="section" id="diseases">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2);color:var(--accent-amber)">🦠 Awareness</div>
+                <h2 class="section-title" style="background:var(--gradient-warm);-webkit-background-clip:text;background-clip:text">Disease Awareness</h2>
+                <p class="section-subtitle">Know the causes, symptoms, and prevention of common diseases. Knowledge is power.</p>
+            </div>
+
+            <div class="grid grid-2" id="disease-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Symptom Checker -->
+            <div class="animate-on-scroll" style="margin-top:64px">
+                <h3 style="text-align:center;margin-bottom:8px;font-family:var(--font-heading)">🩺 Basic Symptom Checker</h3>
+                <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:var(--fs-sm)">⚠️ This is for informational purposes only. It does NOT replace professional medical diagnosis.</p>
+                <div class="symptom-checker" id="symptom-checker">
+                    <div class="symptom-step active" id="symptom-step-0">
+                        <h4 style="margin-bottom:16px">What best describes your main concern?</h4>
+                        <div class="symptom-options" id="symptom-options">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="symptom-step" id="symptom-result">
+                        <h4 id="symptom-result-title" style="margin-bottom:16px"></h4>
+                        <div id="symptom-result-conditions" style="margin-bottom:16px"></div>
+                        <div id="symptom-result-advice" class="calc-tips"></div>
+                        <button class="btn btn-secondary" style="margin-top:16px;width:100%" onclick="resetSymptomChecker()">← Check Another Symptom</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLEEP SECTION ==================== -->
+    <section class="section sleep-section" id="sleep">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge" style="background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.2);color:var(--accent-sky)">😴 Sleep</div>
+                <h2 class="section-title" style="background:var(--gradient-health);-webkit-background-clip:text;background-clip:text">Sleep Health</h2>
+                <p class="section-subtitle">Quality sleep is the foundation of good health. Learn how to optimize your rest.</p>
+            </div>
+
+            <!-- Sleep Hours Chart -->
+            <h3 style="text-align:center;margin-bottom:8px;font-family:var(--font-heading)" class="animate-on-scroll">📊 Recommended Sleep by Age</h3>
+            <div class="sleep-chart animate-on-scroll" id="sleep-chart">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Sleep Tips -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading)" class="animate-on-scroll">💡 Sleep Tips for Better Rest</h3>
+            <div class="grid grid-2" id="sleep-tips-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Sleep Checklist -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading)" class="animate-on-scroll">✅ Bedtime Routine Checklist</h3>
+            <div class="card animate-on-scroll" style="max-width:500px;margin:0 auto">
+                <div id="sleep-checklist">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== YOGA SECTION ==================== -->
+    <section class="section" id="yoga">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2);color:var(--accent-violet)">🧘 Yoga</div>
+                <h2 class="section-title" style="background:var(--gradient-cool);-webkit-background-clip:text;background-clip:text">Yoga & Meditation</h2>
+                <p class="section-subtitle">Find balance, flexibility, and inner peace through ancient practices.</p>
+            </div>
+
+            <!-- Yoga Poses -->
+            <div class="grid grid-4" id="yoga-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Meditation Timer -->
+            <div class="animate-on-scroll" style="margin-top:64px">
+                <h3 style="text-align:center;margin-bottom:8px;font-family:var(--font-heading)">🕐 Meditation Timer</h3>
+                <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px">Choose a duration, sit comfortably, close your eyes, and focus on your breath.</p>
+                <div class="meditation-timer">
+                    <div class="meditation-presets" id="meditation-presets">
+                        <button class="meditation-preset" data-minutes="3">3 min</button>
+                        <button class="meditation-preset active" data-minutes="5">5 min</button>
+                        <button class="meditation-preset" data-minutes="10">10 min</button>
+                        <button class="meditation-preset" data-minutes="15">15 min</button>
+                        <button class="meditation-preset" data-minutes="20">20 min</button>
+                    </div>
+                    <div class="meditation-display">
+                        <div class="meditation-time" id="meditation-time">05:00</div>
+                        <div class="meditation-label" id="meditation-label">Ready</div>
+                    </div>
+                    <div class="meditation-controls">
+                        <button class="btn btn-primary" id="meditation-start" onclick="toggleMeditation()">▶ Start</button>
+                        <button class="btn btn-secondary" onclick="resetMeditation()">↻ Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types of Meditation -->
+            <h3 style="text-align:center;margin:48px 0 24px;font-family:var(--font-heading)" class="animate-on-scroll">🧘 Types of Meditation</h3>
+            <div class="grid grid-3" id="meditation-types-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG SECTION ==================== -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">📝 Blog</div>
+                <h2 class="section-title">Health Articles</h2>
+                <p class="section-subtitle">Stay informed with expert articles on trending health topics.</p>
+            </div>
+
+            <div class="grid grid-3" id="blog-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DASHBOARD SECTION ==================== -->
+    <section class="section dashboard-section" id="dashboard">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">📊 Dashboard</div>
+                <h2 class="section-title">Your Health Dashboard</h2>
+                <p class="section-subtitle">Track your health metrics over time. All data is saved locally in your browser.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-stat animate-on-scroll">
+                    <div class="dashboard-stat-icon">⚖️</div>
+                    <div class="dashboard-stat-value" id="dash-bmi" style="color:var(--accent-teal)">—</div>
+                    <div class="dashboard-stat-label">Last BMI</div>
+                </div>
+                <div class="dashboard-stat animate-on-scroll delay-1">
+                    <div class="dashboard-stat-icon">🎯</div>
+                    <div class="dashboard-stat-value" id="dash-weight" style="color:var(--accent-emerald)">—</div>
+                    <div class="dashboard-stat-label">Current Weight</div>
+                </div>
+                <div class="dashboard-stat animate-on-scroll delay-2">
+                    <div class="dashboard-stat-icon">💧</div>
+                    <div class="dashboard-stat-value" id="dash-water" style="color:var(--accent-sky)">—</div>
+                    <div class="dashboard-stat-label">Water Goal (L)</div>
+                </div>
+                <div class="dashboard-stat animate-on-scroll delay-3">
+                    <div class="dashboard-stat-icon">🔥</div>
+                    <div class="dashboard-stat-value" id="dash-calories" style="color:var(--accent-amber)">—</div>
+                    <div class="dashboard-stat-label">Daily Calories</div>
+                </div>
+            </div>
+
+            <div class="dashboard-chart animate-on-scroll">
+                <h4 style="margin-bottom:16px;font-family:var(--font-heading)">📈 BMI History</h4>
+                <canvas id="bmi-chart" height="300"></canvas>
+                <p style="text-align:center;font-size:var(--fs-sm);color:var(--text-muted);margin-top:12px">Use the BMI Calculator to start tracking your progress.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="nav-logo-icon">🏥</div>
+                        <span class="nav-logo-text">HealthHub</span>
+                    </div>
+                    <p class="footer-description">Your complete health & wellness companion. Track your health, learn about nutrition, practice mindfulness, and stay informed — all in one place.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Health Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="#calculators">BMI Calculator</a></li>
+                        <li><a href="#calculators">Calorie Calculator</a></li>
+                        <li><a href="#calculators">Water Intake</a></li>
+                        <li><a href="#calculators">Heart Rate Zones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Wellness</h4>
+                    <ul class="footer-links">
+                        <li><a href="#exercises">Exercises</a></li>
+                        <li><a href="#nutrition">Nutrition</a></li>
+                        <li><a href="#mental-health">Mental Health</a></li>
+                        <li><a href="#yoga">Yoga & Meditation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#first-aid">First Aid Guide</a></li>
+                        <li><a href="#diseases">Disease Awareness</a></li>
+                        <li><a href="#sleep">Sleep Health</a></li>
+                        <li><a href="#blog">Health Articles</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 HealthHub — CEP Project. Made with ❤️ for community health.</p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="GitHub">⚡</a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">💼</a>
+                    <a href="#" class="footer-social-link" aria-label="Email">📧</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ==================== TOAST CONTAINER ==================== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ==================== ARTICLE MODAL ==================== -->
+    <div class="modal-overlay" id="articleOverlay"></div>
+    <div class="modal" id="articleModal">
+        <div class="modal-header">
+            <h3 class="modal-title" id="article-modal-title"></h3>
+            <button class="modal-close" onclick="closeArticleModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="article-modal-body"></div>
+    </div>
+
+    <!-- ==================== YOGA MODAL ==================== -->
+    <div class="modal-overlay" id="yogaOverlay"></div>
+    <div class="modal" id="yogaModal">
+        <div class="modal-header">
+            <h3 class="modal-title" id="yoga-modal-title"></h3>
+            <button class="modal-close" onclick="closeYogaModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="yoga-modal-body"></div>
+    </div>
+
+    <!-- ==================== EXERCISE MODAL ==================== -->
+    <div class="modal-overlay" id="exerciseOverlay"></div>
+    <div class="modal" id="exerciseModal">
+        <div class="modal-header">
+            <h3 class="modal-title" id="exercise-modal-title"></h3>
+            <button class="modal-close" onclick="closeExerciseModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="exercise-modal-body"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/calculators.js"></script>
+</body>
+</html>

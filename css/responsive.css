@@ -1,0 +1,406 @@
+/* ============================================
+   HEALTHHUB — Responsive Styles
+   ============================================ */
+
+/* ---- Large Tablets & Small Laptops ---- */
+@media (max-width: 1024px) {
+    :root {
+        --fs-6xl: 3rem;
+        --fs-5xl: 2.5rem;
+        --fs-4xl: 2rem;
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-8);
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 0;
+    }
+
+    .hero-description {
+        margin: 0 auto var(--space-8);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-orb {
+        width: 300px;
+        height: 300px;
+    }
+
+    .calc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calc-featured {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal-plan {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calculator-panel-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- Tablets ---- */
+@media (max-width: 768px) {
+    :root {
+        --fs-6xl: 2.5rem;
+        --fs-5xl: 2rem;
+        --fs-4xl: 1.75rem;
+        --fs-3xl: 1.5rem;
+    }
+
+    .section {
+        padding: var(--space-16) 0;
+    }
+
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    /* Navbar */
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero-orb {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-float-icon {
+        font-size: 24px;
+    }
+
+    .hero-center-icon {
+        font-size: 48px;
+    }
+
+    /* Grids */
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calc-featured {
+        grid-column: span 1;
+    }
+
+    .calc-modal-body {
+        grid-template-columns: 1fr;
+    }
+
+    .do-dont {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-goals {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-plan {
+        grid-template-columns: 1fr;
+    }
+
+    .weight-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .sleep-chart {
+        flex-wrap: wrap;
+    }
+
+    .sleep-bar-fill {
+        width: 40px;
+    }
+
+    .symptom-options {
+        grid-template-columns: 1fr;
+    }
+
+    .nutrition-plate {
+        width: 220px;
+        height: 220px;
+    }
+
+    .nutrition-plate-center {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Blog */
+    .blog-image {
+        height: 150px;
+    }
+
+    /* Emergency Numbers */
+    .emergency-numbers {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Breathing */
+    .breathing-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* Meditation */
+    .meditation-display {
+        width: 200px;
+        height: 200px;
+    }
+
+    .meditation-time {
+        font-size: var(--fs-4xl);
+    }
+
+    /* Modal */
+    .modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    /* Toast */
+    .toast-container {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        left: var(--space-4);
+    }
+
+    .toast {
+        min-width: unset;
+        max-width: unset;
+    }
+}
+
+/* ---- Mobile Phones ---- */
+@media (max-width: 480px) {
+    :root {
+        --fs-6xl: 2rem;
+        --fs-5xl: 1.75rem;
+        --fs-4xl: 1.5rem;
+        --fs-3xl: 1.25rem;
+    }
+
+    .section {
+        padding: var(--space-12) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: var(--space-12);
+    }
+
+    .hero-orb {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-float-icon {
+        font-size: 20px;
+    }
+
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-radio-group {
+        flex-direction: column;
+    }
+
+    /* Calculator */
+    .calculator-panel {
+        padding: var(--space-5);
+    }
+
+    .calc-card {
+        padding: var(--space-5);
+    }
+
+    .bmi-gauge {
+        width: 180px;
+        height: 180px;
+    }
+
+    .gauge {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* Exercise */
+    .exercise-image {
+        height: 140px;
+    }
+
+    .exercise-reps {
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    /* Dashboard */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Emergency */
+    .emergency-numbers {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tabs */
+    .tabs {
+        gap: var(--space-1);
+    }
+
+    .tab-btn {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--fs-xs);
+    }
+
+    /* Filter */
+    .filter-group {
+        gap: var(--space-1);
+    }
+
+    .filter-btn {
+        padding: var(--space-1) var(--space-3);
+        font-size: var(--fs-xs);
+    }
+
+    /* Navbar */
+    .nav-logo-text {
+        font-size: var(--fs-base);
+    }
+
+    .nav-logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    /* Water glass */
+    .water-glass {
+        width: 90px;
+        height: 150px;
+    }
+
+    /* Helpline */
+    .helpline-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Superfood */
+    .superfood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Back to top */
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        bottom: var(--space-4);
+        left: var(--space-4);
+    }
+}
+
+/* ---- Very small screens ---- */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+
+    .hero-orb {
+        width: 160px;
+        height: 160px;
+    }
+
+    .breathing-circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .meditation-display {
+        width: 160px;
+        height: 160px;
+    }
+
+    .meditation-time {
+        font-size: var(--fs-3xl);
+    }
+}
