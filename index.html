@@ -35,25 +35,34 @@
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#hero" class="nav-logo">
+            <a href="#" onclick="navigateTo(\'hero\'); return false;" class="nav-logo">
                 <div class="nav-logo-icon">🏥</div>
                 <span class="nav-logo-text">HealthHub</span>
             </a>
 
             <div class="nav-links" id="navLinks">
-                <a href="#hero" class="nav-link active" data-section="hero">Home</a>
-                <a href="#calculators" class="nav-link" data-section="calculators">Tools</a>
-                <a href="#exercises" class="nav-link" data-section="exercises">Exercise</a>
-                <a href="#nutrition" class="nav-link" data-section="nutrition">Nutrition</a>
-                <a href="#mental-health" class="nav-link" data-section="mental-health">Mind</a>
-                <a href="#first-aid" class="nav-link" data-section="first-aid">First Aid</a>
-                <a href="#diseases" class="nav-link" data-section="diseases">Diseases</a>
-                <a href="#sleep" class="nav-link" data-section="sleep">Sleep</a>
-                <a href="#yoga" class="nav-link" data-section="yoga">Yoga</a>
-                <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+                <a href="#" onclick="navigateTo(\'hero\'); return false;" class="nav-link active" data-section="hero" data-i18n="nav_home">Home</a>
+                <a href="#" onclick="navigateTo(\'calculators\'); return false;" class="nav-link" data-section="calculators" data-i18n="nav_tools">Tools</a>
+                <a href="#" onclick="navigateTo(\'exercises\'); return false;" class="nav-link" data-section="exercises" data-i18n="nav_exercise">Exercise</a>
+                <a href="#" onclick="navigateTo(\'nutrition\'); return false;" class="nav-link" data-section="nutrition" data-i18n="nav_nutrition">Nutrition</a>
+                <a href="#" onclick="navigateTo(\'mental-health\'); return false;" class="nav-link" data-section="mental-health" data-i18n="nav_mind">Mind</a>
+                <a href="#" onclick="navigateTo(\'first-aid\'); return false;" class="nav-link" data-section="first-aid" data-i18n="nav_firstaid">First Aid</a>
+                <a href="#" onclick="navigateTo(\'diseases\'); return false;" class="nav-link" data-section="diseases" data-i18n="nav_diseases">Diseases</a>
+                <a href="#" onclick="navigateTo(\'sleep\'); return false;" class="nav-link" data-section="sleep" data-i18n="nav_sleep">Sleep</a>
+                <a href="#" onclick="navigateTo(\'yoga\'); return false;" class="nav-link" data-section="yoga" data-i18n="nav_yoga">Yoga</a>
+                <a href="#" onclick="navigateTo(\'blog\'); return false;" class="nav-link" data-section="blog" data-i18n="nav_blog">Blog</a>
             </div>
 
             <div class="nav-actions">
+                
+                <select id="langSwitcher" class="form-input" style="width: auto; margin-right: 15px; padding: 5px 10px; font-size: 14px;">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="bn">বাংলা (Bengali)</option>
+                    <option value="mr">मराठी (Marathi)</option>
+                    <option value="ta">தமிழ் (Tamil)</option>
+                </select>
+
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -66,16 +75,16 @@
 
     <!-- Mobile Nav Overlay -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="#hero" class="nav-link" data-section="hero">Home</a>
-        <a href="#calculators" class="nav-link" data-section="calculators">Tools</a>
-        <a href="#exercises" class="nav-link" data-section="exercises">Exercise</a>
-        <a href="#nutrition" class="nav-link" data-section="nutrition">Nutrition</a>
-        <a href="#mental-health" class="nav-link" data-section="mental-health">Mind</a>
-        <a href="#first-aid" class="nav-link" data-section="first-aid">First Aid</a>
-        <a href="#diseases" class="nav-link" data-section="diseases">Diseases</a>
-        <a href="#sleep" class="nav-link" data-section="sleep">Sleep</a>
-        <a href="#yoga" class="nav-link" data-section="yoga">Yoga</a>
-        <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+        <a href="#" onclick="navigateTo(\'hero\'); return false;" class="nav-link" data-section="hero" data-i18n="nav_home">Home</a>
+        <a href="#" onclick="navigateTo(\'calculators\'); return false;" class="nav-link" data-section="calculators" data-i18n="nav_tools">Tools</a>
+        <a href="#" onclick="navigateTo(\'exercises\'); return false;" class="nav-link" data-section="exercises" data-i18n="nav_exercise">Exercise</a>
+        <a href="#" onclick="navigateTo(\'nutrition\'); return false;" class="nav-link" data-section="nutrition" data-i18n="nav_nutrition">Nutrition</a>
+        <a href="#" onclick="navigateTo(\'mental-health\'); return false;" class="nav-link" data-section="mental-health" data-i18n="nav_mind">Mind</a>
+        <a href="#" onclick="navigateTo(\'first-aid\'); return false;" class="nav-link" data-section="first-aid" data-i18n="nav_firstaid">First Aid</a>
+        <a href="#" onclick="navigateTo(\'diseases\'); return false;" class="nav-link" data-section="diseases" data-i18n="nav_diseases">Diseases</a>
+        <a href="#" onclick="navigateTo(\'sleep\'); return false;" class="nav-link" data-section="sleep" data-i18n="nav_sleep">Sleep</a>
+        <a href="#" onclick="navigateTo(\'yoga\'); return false;" class="nav-link" data-section="yoga" data-i18n="nav_yoga">Yoga</a>
+        <a href="#" onclick="navigateTo(\'blog\'); return false;" class="nav-link" data-section="blog" data-i18n="nav_blog">Blog</a>
     </div>
 
     <!-- ==================== HERO SECTION ==================== -->
@@ -83,32 +92,32 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <span>💚</span> Your Health Companion
+                    <span data-i18n="hero_badge">💚 Your Health Companion</span>
                 </div>
                 <h1 class="hero-title">
-                    Your Complete<br>
-                    <span class="gradient-text">Health &amp; Wellness</span><br>
-                    Companion
+                    <span data-i18n="hero_title_1">Your Complete</span><br>
+                    <span class="gradient-text" data-i18n="hero_title_2">Health &amp; Wellness</span><br>
+                    <span data-i18n="hero_title_3">Companion</span>
                 </h1>
                 <p class="hero-description">
-                    Track your BMI, plan workouts, learn nutrition, practice mindfulness, and stay informed about health — all in one beautiful platform.
+                    <span data-i18n="hero_desc">Track your BMI, plan workouts, learn nutrition, practice mindfulness, and stay informed about health — all in one beautiful platform.</span>
                 </p>
                 <div class="hero-buttons">
-                    <a href="#calculators" class="btn btn-primary btn-lg">🧮 Explore Tools</a>
-                    <a href="#nutrition" class="btn btn-secondary btn-lg">🥗 Health Tips</a>
+                    <a href="#" onclick="navigateTo(\'calculators\'); return false;" class="btn btn-primary btn-lg"><span data-i18n="hero_btn_1">🧮 Explore Tools</span></a>
+                    <a href="#" onclick="navigateTo(\'nutrition\'); return false;" class="btn btn-secondary btn-lg"><span data-i18n="hero_btn_2">🥗 Health Tips</span></a>
                 </div>
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <div class="hero-stat-value" data-count="6">0</div>
-                        <div class="hero-stat-label">Health Tools</div>
+                        <div class="hero-stat-label" data-i18n="stat_1">Health Tools</div>
                     </div>
                     <div class="hero-stat">
                         <div class="hero-stat-value" data-count="50">0</div>
-                        <div class="hero-stat-label">Wellness Tips</div>
+                        <div class="hero-stat-label" data-i18n="stat_2">Wellness Tips</div>
                     </div>
                     <div class="hero-stat">
                         <div class="hero-stat-value" data-count="8">0</div>
-                        <div class="hero-stat-label">Categories</div>
+                        <div class="hero-stat-label" data-i18n="stat_3">Categories</div>
                     </div>
                 </div>
             </div>
@@ -847,28 +856,28 @@
                 <div>
                     <h4 class="footer-title">Health Tools</h4>
                     <ul class="footer-links">
-                        <li><a href="#calculators">BMI Calculator</a></li>
-                        <li><a href="#calculators">Calorie Calculator</a></li>
-                        <li><a href="#calculators">Water Intake</a></li>
-                        <li><a href="#calculators">Heart Rate Zones</a></li>
+                        <li><a href="#" onclick="navigateTo(\'calculators\'); return false;">BMI Calculator</a></li>
+                        <li><a href="#" onclick="navigateTo(\'calculators\'); return false;">Calorie Calculator</a></li>
+                        <li><a href="#" onclick="navigateTo(\'calculators\'); return false;">Water Intake</a></li>
+                        <li><a href="#" onclick="navigateTo(\'calculators\'); return false;">Heart Rate Zones</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Wellness</h4>
                     <ul class="footer-links">
-                        <li><a href="#exercises">Exercises</a></li>
-                        <li><a href="#nutrition">Nutrition</a></li>
-                        <li><a href="#mental-health">Mental Health</a></li>
-                        <li><a href="#yoga">Yoga & Meditation</a></li>
+                        <li><a href="#" onclick="navigateTo(\'exercises\'); return false;">Exercises</a></li>
+                        <li><a href="#" onclick="navigateTo(\'nutrition\'); return false;" data-i18n="nav_nutrition">Nutrition</a></li>
+                        <li><a href="#" onclick="navigateTo(\'mental-health\'); return false;">Mental Health</a></li>
+                        <li><a href="#" onclick="navigateTo(\'yoga\'); return false;">Yoga & Meditation</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#first-aid">First Aid Guide</a></li>
-                        <li><a href="#diseases">Disease Awareness</a></li>
-                        <li><a href="#sleep">Sleep Health</a></li>
-                        <li><a href="#blog">Health Articles</a></li>
+                        <li><a href="#" onclick="navigateTo(\'first-aid\'); return false;">First Aid Guide</a></li>
+                        <li><a href="#" onclick="navigateTo(\'diseases\'); return false;">Disease Awareness</a></li>
+                        <li><a href="#" onclick="navigateTo(\'sleep\'); return false;">Sleep Health</a></li>
+                        <li><a href="#" onclick="navigateTo(\'blog\'); return false;">Health Articles</a></li>
                     </ul>
                 </div>
             </div>
