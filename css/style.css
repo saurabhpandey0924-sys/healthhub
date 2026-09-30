@@ -329,3 +329,9 @@ strong {
     background: rgba(20, 184, 166, 0.3);
     color: var(--text-primary);
 }
+
+/* Hide Google Translate UI and Banners completely */
+.goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+body { top: 0px !important; }
+#goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+.goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }

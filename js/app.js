@@ -888,94 +888,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ─────── I18N LOCALIZATION ───────
-const translations = {
-    en: {
-        nav_home: "Home", nav_tools: "Tools", nav_exercise: "Exercise", nav_nutrition: "Nutrition",
-        nav_mind: "Mind", nav_firstaid: "First Aid", nav_diseases: "Diseases", nav_sleep: "Sleep",
-        nav_yoga: "Yoga", nav_blog: "Blog",
-        hero_badge: "💚 Your Health Companion",
-        hero_title_1: "Your Complete",
-        hero_title_2: "Health & Wellness",
-        hero_title_3: "Companion",
-        hero_desc: "Track your BMI, plan workouts, learn nutrition, practice mindfulness, and stay informed about health — all in one beautiful platform.",
-        hero_btn_1: "🧮 Explore Tools",
-        hero_btn_2: "🥗 Health Tips",
-        stat_1: "Health Tools", stat_2: "Wellness Tips", stat_3: "Categories"
-    },
-    hi: {
-        nav_home: "मुख्य पृष्ठ", nav_tools: "उपकरण", nav_exercise: "व्यायाम", nav_nutrition: "पोषण",
-        nav_mind: "मन", nav_firstaid: "प्राथमिक चिकित्सा", nav_diseases: "रोग", nav_sleep: "नींद",
-        nav_yoga: "योग", nav_blog: "ब्लॉग",
-        hero_badge: "💚 आपका स्वास्थ्य साथी",
-        hero_title_1: "आपका संपूर्ण",
-        hero_title_2: "स्वास्थ्य और कल्याण",
-        hero_title_3: "साथी",
-        hero_desc: "अपने बीएमआई को ट्रैक करें, वर्कआउट की योजना बनाएं, पोषण सीखें, दिमागीपन का अभ्यास करें, और स्वास्थ्य के बारे में सूचित रहें - सब कुछ एक सुंदर मंच में।",
-        hero_btn_1: "🧮 उपकरण खोजें",
-        hero_btn_2: "🥗 स्वास्थ्य युक्तियाँ",
-        stat_1: "स्वास्थ्य उपकरण", stat_2: "कल्याण युक्तियाँ", stat_3: "श्रेणियाँ"
-    },
-    bn: {
-        nav_home: "হোম", nav_tools: "সরঞ্জাম", nav_exercise: "ব্যায়াম", nav_nutrition: "পুষ্টি",
-        nav_mind: "মন", nav_firstaid: "প্রাথমিক চিকিৎসা", nav_diseases: "রোগ", nav_sleep: "ঘুম",
-        nav_yoga: "যোগব্যায়াম", nav_blog: "ব্লগ",
-        hero_badge: "💚 আপনার স্বাস্থ্য সঙ্গী",
-        hero_title_1: "আপনার সম্পূর্ণ",
-        hero_title_2: "স্বাস্থ্য এবং সুস্থতা",
-        hero_title_3: "সঙ্গী",
-        hero_desc: "আপনার বিএমআই ট্র্যাক করুন, ওয়ার্কআউটের পরিকল্পনা করুন, পুষ্টি শিখুন, মননশীলতার অনুশীলন করুন এবং স্বাস্থ্য সম্পর্কে অবগত থাকুন - সবই এক সুন্দর প্ল্যাটফর্মে।",
-        hero_btn_1: "🧮 সরঞ্জাম অন্বেষণ",
-        hero_btn_2: "🥗 স্বাস্থ্য টিপস",
-        stat_1: "স্বাস্থ্য সরঞ্জাম", stat_2: "সুস্থতা টিপস", stat_3: "বিভাগ"
-    },
-    mr: {
-        nav_home: "मुख्यपृष्ठ", nav_tools: "साधने", nav_exercise: "व्यायाम", nav_nutrition: "पोषण",
-        nav_mind: "मन", nav_firstaid: "प्रथमोपचार", nav_diseases: "रोग", nav_sleep: "झोप",
-        nav_yoga: "योग", nav_blog: "ब्लॉग",
-        hero_badge: "💚 तुमचा आरोग्य साथी",
-        hero_title_1: "तुमचा संपूर्ण",
-        hero_title_2: "आरोग्य आणि कल्याण",
-        hero_title_3: "साथी",
-        hero_desc: "तुमच्या बीएमआयचा मागोवा घ्या, वर्कआउट्सची योजना करा, पोषण शिका, सजगतेचा सराव करा आणि आरोग्याबद्दल माहिती ठेवा — सर्व एकाच सुंदर प्लॅटफॉर्मवर.",
-        hero_btn_1: "🧮 साधने एक्सप्लोर करा",
-        hero_btn_2: "🥗 आरोग्य टिप्स",
-        stat_1: "आरोग्य साधने", stat_2: "कल्याण टिप्स", stat_3: "श्रेण्या"
-    },
-    ta: {
-        nav_home: "முகப்பு", nav_tools: "கருவிகள்", nav_exercise: "உடற்பயிற்சி", nav_nutrition: "ஊட்டச்சத்து",
-        nav_mind: "மனம்", nav_firstaid: "முதலுதவி", nav_diseases: "நோய்கள்", nav_sleep: "தூக்கம்",
-        nav_yoga: "யோகா", nav_blog: "வலைப்பதிவு",
-        hero_badge: "💚 உங்கள் ஆரோக்கிய தோழன்",
-        hero_title_1: "உங்கள் முழுமையான",
-        hero_title_2: "ஆரோக்கியம் மற்றும் நல்வாழ்வு",
-        hero_title_3: "தோழன்",
-        hero_desc: "உங்கள் பிஎம்ஐயைக் கண்காணிக்கவும், உடற்பயிற்சிகளைத் திட்டமிடவும், ஊட்டச்சத்தைக் கற்றுக்கொள்ளவும், நினைவாற்றலைப் பயிற்சி செய்யவும், ஆரோக்கியம் குறித்துத் தெரிந்துகொள்ளவும் — அனைத்தும் ஒரே அழகிய தளத்தில்.",
-        hero_btn_1: "🧮 கருவிகளை ஆராயுங்கள்",
-        hero_btn_2: "🥗 ஆரோக்கிய குறிப்புகள்",
-        stat_1: "சுகாதார கருவிகள்", stat_2: "நல்வாழ்வு குறிப்புகள்", stat_3: "வகைகள்"
-    }
-};
-
-function applyLanguage(lang) {
-    const dict = translations[lang] || translations['en'];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) {
-            el.innerHTML = dict[key];
-        }
-    });
-    localStorage.setItem('healthhub_lang', lang);
-}
-
+// ─────── NATIVE PROXY TRANSLATION ───────
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('healthhub_lang') || 'en';
     const switcher = document.getElementById('langSwitcher');
+    
+    // Check if user already has a language saved
+    const savedLang = localStorage.getItem('healthhub_lang') || 'en';
+    if(switcher) switcher.value = savedLang;
+
+    // We must wait for Google Translate to load its combo box
+    setTimeout(() => {
+        const googleSelect = document.querySelector('.goog-te-combo');
+        if (googleSelect && savedLang !== 'en') {
+            googleSelect.value = savedLang;
+            googleSelect.dispatchEvent(new Event('change'));
+        }
+    }, 1500);
+
     if (switcher) {
-        switcher.value = savedLang;
         switcher.addEventListener('change', (e) => {
-            applyLanguage(e.target.value);
+            const lang = e.target.value;
+            localStorage.setItem('healthhub_lang', lang);
+            
+            const googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect) {
+                googleSelect.value = lang;
+                googleSelect.dispatchEvent(new Event('change'));
+            }
         });
     }
-    applyLanguage(savedLang);
 });
