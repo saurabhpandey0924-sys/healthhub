@@ -57,7 +57,7 @@ window.addEventListener('scroll', setActiveNav);
 
 // ─────── HAMBURGER MENU ───────
 const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
+const mobileNav = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');

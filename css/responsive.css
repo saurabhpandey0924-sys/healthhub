@@ -70,6 +70,14 @@
 
 /* ---- Tablets ---- */
 @media (max-width: 768px) {
+
+    .mobile-lang-switcher {
+        margin: 10px 0 !important;
+        width: 100% !important;
+        max-width: 200px;
+        align-self: center;
+    }
+
     :root {
         --fs-6xl: 2.5rem;
         --fs-5xl: 2rem;
@@ -89,6 +97,33 @@
     .nav-links {
         display: none;
     }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-secondary);
+        padding: var(--space-4) 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border);
+        z-index: 100;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-links.active .nav-link {
+        padding: var(--space-3) var(--space-4);
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-links.active .nav-link:last-child {
+        border-bottom: none;
+    }
+
 
     .hamburger {
         display: flex;
