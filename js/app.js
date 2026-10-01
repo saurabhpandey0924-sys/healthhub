@@ -26,12 +26,25 @@ themeToggle.addEventListener('click', () => {
 
 // ─────── NAVBAR SCROLL EFFECT ───────
 const navbar = document.getElementById('navbar');
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
+    // 1. Scrolled style
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
+
+    // 2. Hide on scroll down, show on scroll up
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down - hide
+        navbar.style.transform = 'translateY(-100%)';
+    } else {
+        // Scrolling up - show
+        navbar.style.transform = 'translateY(0)';
+    }
+    lastScrollY = window.scrollY;
 });
 
 // ─────── ACTIVE NAV LINK ON SCROLL ───────

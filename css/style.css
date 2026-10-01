@@ -335,3 +335,11 @@ strong {
 body { top: 0px !important; }
 #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
 .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+
+/* Navbar auto-hide transition & Section top padding for SPA */
+.navbar {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.section {
+    padding-top: 100px !important; /* Ensure content clears the fixed navbar */
+}
