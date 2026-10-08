@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign In or Create an Account on HealthHub — Your Complete Health & Wellness Companion.">
+    <title>Sign In & Join — HealthHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body class="login-page-body">
+
+    <!-- Ambient glow orbs -->
+    <div class="login-bg-glow glow-teal"></div>
+    <div class="login-bg-glow glow-sky"></div>
+
+    <!-- Header / Nav bar -->
+    <header class="login-header-bar">
+        <a href="index.html" class="login-brand">
+            <div class="login-brand-icon">💚</div>
+            <span>HealthHub</span>
+        </a>
+
+        <div class="login-header-actions">
+            <a href="index.html" class="btn-back-home">
+                <span>←</span> Back to Home
+            </a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">☀️</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="login-main-container">
+
+        <!-- Left Column: Visual Showcase -->
+        <section class="login-visual-panel">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" alt="Athletic training and active healthy lifestyle" class="login-visual-bg">
+            <div class="login-visual-overlay"></div>
+
+            <div class="login-visual-content-top">
+                <div class="visual-badge">
+                    <span>✨ Health & Longevity</span>
+                </div>
+                <h1 class="visual-headline">Empower Your Body.<br>Calm Your Mind.</h1>
+                <p class="visual-subtext">Access science-backed fitness routines, interactive health calculators, nutritional superfoods, and mindful breathing practices — all designed for real everyday living.</p>
+            </div>
+
+            <div class="login-visual-content-bottom">
+                <div class="visual-chips-grid">
+                    <div class="visual-chip">
+                        <div class="visual-chip-num">6+</div>
+                        <div class="visual-chip-label">Interactive Tools</div>
+                    </div>
+                    <div class="visual-chip">
+                        <div class="visual-chip-num">15K+</div>
+                        <div class="visual-chip-label">Active Seekers</div>
+                    </div>
+                    <div class="visual-chip">
+                        <div class="visual-chip-num">100%</div>
+                        <div class="visual-chip-label">Free & Private</div>
+                    </div>
+                </div>
+
+                <div class="visual-quote-card">
+                    <p class="visual-quote-text">"HealthHub completely transformed how I manage daily stress and plan my meals. The calculators and yoga routines are easy to follow and give genuine clarity."</p>
+                    <span class="visual-quote-author">Priya Sharma — Community Member</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column: Authentication Card -->
+        <section class="login-form-panel">
+            <div class="login-form-card">
+
+                <!-- Header area -->
+                <div class="form-header-area">
+                    <div class="form-header-icon">💚</div>
+                    <h2 class="form-title" id="formHeading">Welcome to HealthHub</h2>
+                    <p class="form-subtitle" id="formSubheading">Sign in to sync your tools, trackers, and fitness milestones.</p>
+                </div>
+
+                <!-- Tabs: Sign In / Create Account -->
+                <div class="auth-mode-tabs" id="authModeTabs">
+                    <button type="button" class="auth-tab-btn active" id="tabSignIn" onclick="setAuthMode('login')">Sign In</button>
+                    <button type="button" class="auth-tab-btn" id="tabSignUp" onclick="setAuthMode('register')">Create Account</button>
+                </div>
+
+                <!-- Instant Demo Banner -->
+                <div class="demo-quick-box" id="demoBanner">
+                    <div class="demo-quick-info">
+                        <h5>🚀 Instant 1-Click Demo</h5>
+                        <p>Explore all features immediately without typing credentials</p>
+                    </div>
+                    <button type="button" class="btn-demo-action" onclick="handleDemoLogin()">
+                        Try Demo Login
+                    </button>
+                </div>
+
+                <div class="auth-divider" id="authDivider">or continue with email</div>
+
+                <!-- Sign In Form -->
+                <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="loginEmail">Email Address or Username</label>
+                        <div class="auth-input-container">
+                            <span class="auth-field-icon">✉️</span>
+                            <input type="text" id="loginEmail" class="auth-text-input" placeholder="e.g. alex@healthhub.org" required autocomplete="username">
+                        </div>
+                    </div>
+
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="loginPassword">Password</label>
+                        <div class="auth-input-container">
+                            <span class="auth-field-icon">🔒</span>
+                            <input type="password" id="loginPassword" class="auth-text-input" placeholder="Enter your password" required autocomplete="current-password">
+                            <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('loginPassword', this)">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="auth-extras-row">
+                        <label class="auth-checkbox-wrap">
+                            <input type="checkbox" id="rememberMe" checked>
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" onclick="handleForgotPassword(event)" class="auth-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">
+                        <span>Sign In to HealthHub</span>
+                        <span>→</span>
+                    </button>
+                </form>
+
+                <!-- Create Account Form -->
+                <form id="registerForm" style="display: none;" onsubmit="handleRegisterSubmit(event)">
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="regName">Full Name</label>
+                        <div class="auth-input-container">
+                            <span class="auth-field-icon">👤</span>
+                            <input type="text" id="regName" class="auth-text-input" placeholder="e.g. Alex Mercer" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="regEmail">Email Address</label>
+                        <div class="auth-input-container">
+                            <span class="auth-field-icon">✉️</span>
+                            <input type="email" id="regEmail" class="auth-text-input" placeholder="e.g. alex@healthhub.org" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="auth-form-row">
+                        <div class="auth-field-group">
+                            <label class="auth-label" for="regPassword">Password</label>
+                            <div class="auth-input-container">
+                                <span class="auth-field-icon">🔒</span>
+                                <input type="password" id="regPassword" class="auth-text-input" placeholder="Min 6 chars" minlength="6" required autocomplete="new-password">
+                                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('regPassword', this)">👁️</button>
+                            </div>
+                        </div>
+
+                        <div class="auth-field-group">
+                            <label class="auth-label" for="regConfirmPassword">Confirm Password</label>
+                            <div class="auth-input-container">
+                                <span class="auth-field-icon">🔒</span>
+                                <input type="password" id="regConfirmPassword" class="auth-text-input" placeholder="Repeat" minlength="6" required autocomplete="new-password">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="auth-field-group">
+                        <label class="auth-label" for="regGoal">Primary Wellness Focus</label>
+                        <div class="auth-input-container">
+                            <span class="auth-field-icon">🎯</span>
+                            <select id="regGoal" class="auth-text-input" style="cursor: pointer;">
+                                <option value="fitness">🏃 Build Fitness & Daily Stamina</option>
+                                <option value="weight_loss">⚖️ Balanced Weight Management</option>
+                                <option value="muscle">💪 Strength, Posture & Muscle Tone</option>
+                                <option value="mindfulness">🧘 Mind Clarity, Stress & Sleep Health</option>
+                                <option value="nutrition">🥗 Whole Foods & Balanced Nutrition</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="auth-extras-row">
+                        <label class="auth-checkbox-wrap">
+                            <input type="checkbox" id="agreeTerms" required checked>
+                            <span>I agree to HealthHub Community Guidelines</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-auth-submit">
+                        <span>Create Free Account</span>
+                        <span>→</span>
+                    </button>
+                </form>
+
+                <!-- Logged In Profile View (If already authenticated) -->
+                <div id="profileView" class="logged-in-profile-view" style="display: none;">
+                    <div class="profile-avatar-large" id="profileAvatarLarge">👤</div>
+                    <h3 class="profile-name-large" id="profileNameLarge">User Name</h3>
+                    <p class="profile-email-large" id="profileEmailLarge">user@healthhub.org</p>
+                    <span class="profile-goal-badge" id="profileGoalBadge">Fitness Enthusiast</span>
+
+                    <div class="profile-action-buttons">
+                        <a href="index.html" class="btn-enter-dashboard">
+                            <span>Open HealthHub Dashboard</span>
+                            <span>→</span>
+                        </a>
+                        <button type="button" class="btn-profile-signout" onclick="handleLogout()">
+                            Sign Out of this Account
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Security Footer -->
+                <div class="auth-security-footer">
+                    <span>🔒</span>
+                    <span>256-Bit Encrypted Session • Local Privacy Architecture</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Login Application Logic -->
+    <script>
+        // ─────── THEME SYNC ───────
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('healthhub-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('healthhub-theme', next);
+            themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+        });
+
+        // ─────── TOAST SYSTEM ───────
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const icons = { success: '✅', warning: '⚠️', error: '❌', info: 'ℹ️' };
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<span class="toast-icon">${icons[type]}</span><span class="toast-message">${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('removing');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        // ─────── AUTHENTICATION STATE ───────
+        let currentUser = null;
+
+        function checkUserSession() {
+            try {
+                const stored = localStorage.getItem('healthhub_user');
+                if (stored) {
+                    currentUser = JSON.parse(stored);
+                    showProfileView(currentUser);
+                } else {
+                    currentUser = null;
+                    showFormView();
+                }
+            } catch (e) {
+                currentUser = null;
+                showFormView();
+            }
+        }
+
+        function showProfileView(user) {
+            document.getElementById('formHeading').textContent = `Signed In as ${user.name.split(' ')[0]}`;
+            document.getElementById('formSubheading').textContent = 'Your account is active and connected with HealthHub.';
+            document.getElementById('authModeTabs').style.display = 'none';
+            document.getElementById('demoBanner').style.display = 'none';
+            document.getElementById('authDivider').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'none';
+
+            const profileView = document.getElementById('profileView');
+            profileView.style.display = 'block';
+            document.getElementById('profileAvatarLarge').textContent = user.avatar || '🌱';
+            document.getElementById('profileNameLarge').textContent = user.name || 'Member';
+            document.getElementById('profileEmailLarge').textContent = user.email || 'user@healthhub.org';
+            document.getElementById('profileGoalBadge').textContent = user.goalLabel || 'Fitness & Vitality';
+        }
+
+        function showFormView() {
+            document.getElementById('profileView').style.display = 'none';
+            document.getElementById('authModeTabs').style.display = 'flex';
+            document.getElementById('demoBanner').style.display = 'flex';
+            document.getElementById('authDivider').style.display = 'flex';
+
+            // Check URL query param for ?mode=register
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('mode') === 'register') {
+                setAuthMode('register');
+            } else {
+                setAuthMode('login');
+            }
+        }
+
+        function setAuthMode(mode) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabSignIn = document.getElementById('tabSignIn');
+            const tabSignUp = document.getElementById('tabSignUp');
+            const heading = document.getElementById('formHeading');
+            const subheading = document.getElementById('formSubheading');
+
+            if (mode === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabSignIn.classList.add('active');
+                tabSignUp.classList.remove('active');
+                heading.textContent = 'Welcome Back';
+                subheading.textContent = 'Sign in to access your saved health records and workout plans.';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabSignIn.classList.remove('active');
+                tabSignUp.classList.add('active');
+                heading.textContent = 'Join HealthHub';
+                subheading.textContent = 'Create your free wellness profile in under 30 seconds.';
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            if (!email || !password) {
+                showToast('Please enter both your email and password.', 'warning');
+                return;
+            }
+
+            const name = email.split('@')[0];
+            const formattedName = name.charAt(0).toUpperCase() + name.slice(1);
+
+            const user = {
+                name: formattedName,
+                email: email,
+                goalLabel: 'Overall Longevity & Wellness',
+                avatar: '💚',
+                loginTime: new Date().toISOString()
+            };
+
+            localStorage.setItem('healthhub_user', JSON.stringify(user));
+            currentUser = user;
+
+            showToast(`Welcome back, ${user.name}! Redirecting...`, 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const confirm = document.getElementById('regConfirmPassword').value;
+            const goalSelect = document.getElementById('regGoal');
+            const goalLabel = goalSelect.options[goalSelect.selectedIndex].text;
+
+            if (!name || !email || !password) {
+                showToast('Please fill out all required fields.', 'warning');
+                return;
+            }
+
+            if (password !== confirm) {
+                showToast('Passwords do not match. Please verify.', 'error');
+                return;
+            }
+
+            const user = {
+                name: name,
+                email: email,
+                goalLabel: goalLabel,
+                avatar: '✨',
+                loginTime: new Date().toISOString()
+            };
+
+            localStorage.setItem('healthhub_user', JSON.stringify(user));
+            currentUser = user;
+
+            showToast(`Account created for ${user.name}! Welcome to HealthHub! 🎉`, 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1200);
+        }
+
+        function handleDemoLogin() {
+            const demoUser = {
+                name: 'Alex Mercer',
+                email: 'alex.mercer@healthhub.org',
+                goalLabel: '🏃 Build Fitness & Daily Stamina',
+                avatar: '⚡',
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('healthhub_user', JSON.stringify(demoUser));
+            currentUser = demoUser;
+
+            showToast('Logged in as Alex Mercer (Demo Account) 🚀 Redirecting...', 'success');
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 900);
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('healthhub_user');
+            currentUser = null;
+            showToast('You have signed out successfully.', 'info');
+            checkUserSession();
+        }
+
+        function handleForgotPassword(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            if (email) {
+                showToast(`Password reset link sent to ${email} 📩`, 'info');
+            } else {
+                showToast('Please enter your email above to receive password assistance.', 'warning');
+            }
+        }
+
+        function togglePasswordVisibility(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            if (input.type === 'password') {
+                input.type = 'text';
+                btn.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                btn.textContent = '👁️';
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', checkUserSession);
+    </script>
+</body>
+</html>

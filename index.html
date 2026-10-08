@@ -74,9 +74,9 @@
                 
                 
 
-                <button class="btn btn-outline btn-sm auth-nav-btn" id="authNavBtn" onclick="openAuthModal()" aria-label="Account">
+                <a href="login.html" class="btn btn-outline btn-sm auth-nav-btn" id="authNavBtn" onclick="if(currentUser){openAuthModal(); return false;}" aria-label="Account">
                     <span class="auth-btn-icon">👤</span> <span id="authBtnLabel">Sign In</span>
-                </button>
+                </a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -99,9 +99,9 @@
         <a href="#" onclick="navigateTo('sleep'); return false;" class="nav-link" data-section="sleep" data-i18n="nav_sleep">Sleep</a>
         <a href="#" onclick="navigateTo('yoga'); return false;" class="nav-link" data-section="yoga" data-i18n="nav_yoga">Yoga</a>
         <a href="#" onclick="navigateTo('blog'); return false;" class="nav-link" data-section="blog" data-i18n="nav_blog">Blog</a>
-        <button class="btn btn-primary auth-mobile-btn" id="authMobileBtn" onclick="openAuthModal()" style="margin-top:16px;width:100%">
+        <a href="login.html" class="btn btn-primary auth-mobile-btn" id="authMobileBtn" onclick="if(currentUser){openAuthModal(); return false;}" style="margin-top:16px;width:100%;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;">
             <span class="auth-btn-icon">👤</span> <span id="authMobileBtnLabel">Sign In / Register</span>
-        </button>
+        </a>
     </div>
 
     <!-- ==================== HERO SECTION ==================== -->

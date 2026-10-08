@@ -928,32 +928,36 @@ function updateAuthUI(user) {
 }
 
 function openAuthModal() {
+    if (!currentUser) {
+        window.location.href = 'login.html';
+        return;
+    }
+
     const modal = document.getElementById('authModal');
     const overlay = document.getElementById('authOverlay');
     if (!modal || !overlay) return;
 
-    if (currentUser) {
-        // Show Profile Card
-        document.getElementById('loginForm').style.display = 'none';
-        document.getElementById('registerForm').style.display = 'none';
-        document.querySelector('.auth-tabs').style.display = 'none';
-        document.querySelector('.auth-demo-banner').style.display = 'none';
-        document.getElementById('authModalTitle').textContent = 'My HealthHub Profile';
-        
-        const profileCard = document.getElementById('authProfileCard');
-        if (profileCard) {
-            profileCard.style.display = 'block';
-            document.getElementById('profileName').textContent = currentUser.name || 'Member';
-            document.getElementById('profileEmail').textContent = currentUser.email || 'user@healthhub.com';
-            document.getElementById('profileGoal').textContent = currentUser.goalLabel || 'Fitness & Vitality';
-            document.getElementById('profileAvatar').textContent = currentUser.avatar || '🌱';
-        }
-    } else {
-        // Show Login / Register
-        document.querySelector('.auth-tabs').style.display = 'flex';
-        document.querySelector('.auth-demo-banner').style.display = 'block';
-        document.getElementById('authProfileCard').style.display = 'none';
-        switchAuthTab('login');
+    // Show Profile Card
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const authTabs = document.querySelector('.auth-tabs');
+    const demoBanner = document.querySelector('.auth-demo-banner');
+    
+    if (loginForm) loginForm.style.display = 'none';
+    if (registerForm) registerForm.style.display = 'none';
+    if (authTabs) authTabs.style.display = 'none';
+    if (demoBanner) demoBanner.style.display = 'none';
+    
+    const modalTitle = document.getElementById('authModalTitle');
+    if (modalTitle) modalTitle.textContent = 'My HealthHub Profile';
+    
+    const profileCard = document.getElementById('authProfileCard');
+    if (profileCard) {
+        profileCard.style.display = 'block';
+        document.getElementById('profileName').textContent = currentUser.name || 'Member';
+        document.getElementById('profileEmail').textContent = currentUser.email || 'user@healthhub.com';
+        document.getElementById('profileGoal').textContent = currentUser.goalLabel || 'Fitness & Vitality';
+        document.getElementById('profileAvatar').textContent = currentUser.avatar || '🌱';
     }
 
     overlay.classList.add('active');
