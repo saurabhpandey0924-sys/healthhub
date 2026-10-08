@@ -32,6 +32,7 @@ const HEALTH_DATA = {
             muscle: "Chest, Shoulders, Triceps",
             difficulty: "beginner",
             emoji: "💪",
+            image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "10-15 reps",
             instructions: [
@@ -47,6 +48,7 @@ const HEALTH_DATA = {
             muscle: "Quadriceps, Glutes, Hamstrings",
             difficulty: "beginner",
             emoji: "🦵",
+            image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "12-15 reps",
             instructions: [
@@ -62,6 +64,7 @@ const HEALTH_DATA = {
             muscle: "Core, Shoulders",
             difficulty: "beginner",
             emoji: "🧱",
+            image: "https://images.unsplash.com/photo-1566241142559-40e1dab266c6?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "30-60 sec",
             instructions: [
@@ -77,6 +80,7 @@ const HEALTH_DATA = {
             muscle: "Full Body",
             difficulty: "advanced",
             emoji: "🔥",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
             sets: "4 sets",
             reps: "8-12 reps",
             instructions: [
@@ -92,6 +96,7 @@ const HEALTH_DATA = {
             muscle: "Full Body",
             difficulty: "beginner",
             emoji: "⭐",
+            image: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "30-45 sec",
             instructions: [
@@ -107,6 +112,7 @@ const HEALTH_DATA = {
             muscle: "Core, Shoulders, Legs",
             difficulty: "intermediate",
             emoji: "🏔️",
+            image: "https://images.unsplash.com/photo-1434682881908-b43d0467b798?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "20 reps each side",
             instructions: [
@@ -122,6 +128,7 @@ const HEALTH_DATA = {
             muscle: "Quadriceps, Glutes, Hamstrings",
             difficulty: "beginner",
             emoji: "🚶",
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "10 each leg",
             instructions: [
@@ -137,6 +144,7 @@ const HEALTH_DATA = {
             muscle: "Core, Hip Flexors, Legs",
             difficulty: "intermediate",
             emoji: "🏃",
+            image: "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "30 sec",
             instructions: [
@@ -152,6 +160,7 @@ const HEALTH_DATA = {
             muscle: "Core, Obliques",
             difficulty: "intermediate",
             emoji: "🚲",
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "15 each side",
             instructions: [
@@ -167,6 +176,7 @@ const HEALTH_DATA = {
             muscle: "Full Body, Calves",
             difficulty: "beginner",
             emoji: "🤸",
+            image: "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "60 sec",
             instructions: [
@@ -182,6 +192,7 @@ const HEALTH_DATA = {
             muscle: "Triceps, Shoulders",
             difficulty: "intermediate",
             emoji: "🪑",
+            image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600&q=80",
             sets: "3 sets",
             reps: "10-12 reps",
             instructions: [
@@ -197,6 +208,7 @@ const HEALTH_DATA = {
             muscle: "Full Body",
             difficulty: "beginner",
             emoji: "🧘",
+            image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80",
             sets: "1 set",
             reps: "Hold 30 sec each",
             instructions: [
@@ -241,50 +253,50 @@ const HEALTH_DATA = {
     // ─────── NUTRITION DATA ───────
     foods: {
         proteins: [
-            { name: "Eggs", emoji: "🥚", calories: "155 kcal/100g", nutrients: "Protein, Vitamin D, B12" },
-            { name: "Chicken Breast", emoji: "🍗", calories: "165 kcal/100g", nutrients: "Protein, Niacin, B6" },
-            { name: "Paneer", emoji: "🧀", calories: "265 kcal/100g", nutrients: "Protein, Calcium, Phosphorus" },
-            { name: "Lentils (Dal)", emoji: "🫘", calories: "116 kcal/100g", nutrients: "Protein, Iron, Fiber" },
-            { name: "Greek Yogurt", emoji: "🥛", calories: "59 kcal/100g", nutrients: "Protein, Calcium, Probiotics" },
-            { name: "Chickpeas", emoji: "🫘", calories: "164 kcal/100g", nutrients: "Protein, Fiber, Folate" }
+            { name: "Eggs", emoji: "🥚", calories: "155 kcal/100g", nutrients: "Protein, Vitamin D, B12", image: "https://images.unsplash.com/photo-1516448620398-c5f44bf9f441?auto=format&fit=crop&w=300&q=80" },
+            { name: "Chicken Breast", emoji: "🍗", calories: "165 kcal/100g", nutrients: "Protein, Niacin, B6", image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=300&q=80" },
+            { name: "Paneer", emoji: "🧀", calories: "265 kcal/100g", nutrients: "Protein, Calcium, Phosphorus", image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=300&q=80" },
+            { name: "Lentils (Dal)", emoji: "🫘", calories: "116 kcal/100g", nutrients: "Protein, Iron, Fiber", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80" },
+            { name: "Greek Yogurt", emoji: "🥛", calories: "59 kcal/100g", nutrients: "Protein, Calcium, Probiotics", image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=300&q=80" },
+            { name: "Chickpeas", emoji: "🫘", calories: "164 kcal/100g", nutrients: "Protein, Fiber, Folate", image: "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?auto=format&fit=crop&w=300&q=80" }
         ],
         carbs: [
-            { name: "Brown Rice", emoji: "🍚", calories: "111 kcal/100g", nutrients: "Fiber, Manganese, Selenium" },
-            { name: "Oats", emoji: "🥣", calories: "389 kcal/100g", nutrients: "Fiber, Iron, Magnesium" },
-            { name: "Sweet Potato", emoji: "🍠", calories: "86 kcal/100g", nutrients: "Vitamin A, Fiber, Potassium" },
-            { name: "Whole Wheat Roti", emoji: "🫓", calories: "297 kcal/100g", nutrients: "Fiber, Iron, B-vitamins" },
-            { name: "Quinoa", emoji: "🌾", calories: "120 kcal/100g", nutrients: "Complete Protein, Fiber, Iron" },
-            { name: "Banana", emoji: "🍌", calories: "89 kcal/100g", nutrients: "Potassium, Vitamin B6, Fiber" }
+            { name: "Brown Rice", emoji: "🍚", calories: "111 kcal/100g", nutrients: "Fiber, Manganese, Selenium", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80" },
+            { name: "Oats", emoji: "🥣", calories: "389 kcal/100g", nutrients: "Fiber, Iron, Magnesium", image: "https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=300&q=80" },
+            { name: "Sweet Potato", emoji: "🍠", calories: "86 kcal/100g", nutrients: "Vitamin A, Fiber, Potassium", image: "https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?auto=format&fit=crop&w=300&q=80" },
+            { name: "Whole Wheat Roti", emoji: "🫓", calories: "297 kcal/100g", nutrients: "Fiber, Iron, B-vitamins", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=300&q=80" },
+            { name: "Quinoa", emoji: "🌾", calories: "120 kcal/100g", nutrients: "Complete Protein, Fiber, Iron", image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80" },
+            { name: "Banana", emoji: "🍌", calories: "89 kcal/100g", nutrients: "Potassium, Vitamin B6, Fiber", image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=300&q=80" }
         ],
         fats: [
-            { name: "Almonds", emoji: "🥜", calories: "579 kcal/100g", nutrients: "Vitamin E, Magnesium, Healthy Fats" },
-            { name: "Avocado", emoji: "🥑", calories: "160 kcal/100g", nutrients: "Healthy Fats, Potassium, Fiber" },
-            { name: "Olive Oil", emoji: "🫒", calories: "884 kcal/100g", nutrients: "Monounsaturated Fats, Vitamin E" },
-            { name: "Flaxseeds", emoji: "🌻", calories: "534 kcal/100g", nutrients: "Omega-3, Fiber, Lignans" },
-            { name: "Walnuts", emoji: "🌰", calories: "654 kcal/100g", nutrients: "Omega-3, Antioxidants, Protein" },
-            { name: "Ghee", emoji: "🧈", calories: "900 kcal/100g", nutrients: "Vitamin A, D, E, Butyric Acid" }
+            { name: "Almonds", emoji: "🥜", calories: "579 kcal/100g", nutrients: "Vitamin E, Magnesium, Healthy Fats", image: "https://images.unsplash.com/photo-1508061252445-5350f3193a14?auto=format&fit=crop&w=300&q=80" },
+            { name: "Avocado", emoji: "🥑", calories: "160 kcal/100g", nutrients: "Healthy Fats, Potassium, Fiber", image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=300&q=80" },
+            { name: "Olive Oil", emoji: "🫒", calories: "884 kcal/100g", nutrients: "Monounsaturated Fats, Vitamin E", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=300&q=80" },
+            { name: "Flaxseeds", emoji: "🌻", calories: "534 kcal/100g", nutrients: "Omega-3, Fiber, Lignans", image: "https://images.unsplash.com/photo-1589135233689-d56d0a79042b?auto=format&fit=crop&w=300&q=80" },
+            { name: "Walnuts", emoji: "🌰", calories: "654 kcal/100g", nutrients: "Omega-3, Antioxidants, Protein", image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=300&q=80" },
+            { name: "Ghee", emoji: "🧈", calories: "900 kcal/100g", nutrients: "Vitamin A, D, E, Butyric Acid", image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=300&q=80" }
         ],
         vitamins: [
-            { name: "Oranges", emoji: "🍊", calories: "47 kcal/100g", nutrients: "Vitamin C, Fiber, Folate" },
-            { name: "Spinach", emoji: "🥬", calories: "23 kcal/100g", nutrients: "Iron, Vitamin K, Folate" },
-            { name: "Carrots", emoji: "🥕", calories: "41 kcal/100g", nutrients: "Vitamin A, Beta-Carotene, Fiber" },
-            { name: "Broccoli", emoji: "🥦", calories: "34 kcal/100g", nutrients: "Vitamin C, K, Fiber, Sulforaphane" },
-            { name: "Berries", emoji: "🫐", calories: "57 kcal/100g", nutrients: "Antioxidants, Vitamin C, Fiber" },
-            { name: "Tomatoes", emoji: "🍅", calories: "18 kcal/100g", nutrients: "Vitamin C, Lycopene, Potassium" }
+            { name: "Oranges", emoji: "🍊", calories: "47 kcal/100g", nutrients: "Vitamin C, Fiber, Folate", image: "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?auto=format&fit=crop&w=300&q=80" },
+            { name: "Spinach", emoji: "🥬", calories: "23 kcal/100g", nutrients: "Iron, Vitamin K, Folate", image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=300&q=80" },
+            { name: "Carrots", emoji: "🥕", calories: "41 kcal/100g", nutrients: "Vitamin A, Beta-Carotene, Fiber", image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5c317?auto=format&fit=crop&w=300&q=80" },
+            { name: "Broccoli", emoji: "🥦", calories: "34 kcal/100g", nutrients: "Vitamin C, K, Fiber, Sulforaphane", image: "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=300&q=80" },
+            { name: "Berries", emoji: "🫐", calories: "57 kcal/100g", nutrients: "Antioxidants, Vitamin C, Fiber", image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=300&q=80" },
+            { name: "Tomatoes", emoji: "🍅", calories: "18 kcal/100g", nutrients: "Vitamin C, Lycopene, Potassium", image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=300&q=80" }
         ]
     },
 
     superfoods: [
-        { name: "Turmeric", emoji: "🟡", benefit: "Anti-inflammatory" },
-        { name: "Blueberries", emoji: "🫐", benefit: "Antioxidant rich" },
-        { name: "Salmon", emoji: "🐟", benefit: "Omega-3 fatty acids" },
-        { name: "Spinach", emoji: "🥬", benefit: "Iron & vitamins" },
-        { name: "Chia Seeds", emoji: "⚪", benefit: "Fiber & protein" },
-        { name: "Green Tea", emoji: "🍵", benefit: "Metabolism boost" },
-        { name: "Garlic", emoji: "🧄", benefit: "Immune support" },
-        { name: "Dark Chocolate", emoji: "🍫", benefit: "Heart health" },
-        { name: "Ginger", emoji: "🫚", benefit: "Digestive aid" },
-        { name: "Amla", emoji: "🟢", benefit: "Vitamin C powerhouse" }
+        { name: "Turmeric", emoji: "🟡", benefit: "Anti-inflammatory", image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=300&q=80" },
+        { name: "Blueberries", emoji: "🫐", benefit: "Antioxidant rich", image: "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=300&q=80" },
+        { name: "Salmon", emoji: "🐟", benefit: "Omega-3 fatty acids", image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=300&q=80" },
+        { name: "Spinach", emoji: "🥬", benefit: "Iron & vitamins", image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=300&q=80" },
+        { name: "Chia Seeds", emoji: "⚪", benefit: "Fiber & protein", image: "https://images.unsplash.com/photo-1589135233689-d56d0a79042b?auto=format&fit=crop&w=300&q=80" },
+        { name: "Green Tea", emoji: "🍵", benefit: "Metabolism boost", image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=300&q=80" },
+        { name: "Garlic", emoji: "🧄", benefit: "Immune support", image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=300&q=80" },
+        { name: "Dark Chocolate", emoji: "🍫", benefit: "Heart health", image: "https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=300&q=80" },
+        { name: "Ginger", emoji: "🫚", benefit: "Digestive aid", image: "https://images.unsplash.com/photo-1615485290172-1c2ecde0a006?auto=format&fit=crop&w=300&q=80" },
+        { name: "Amla", emoji: "🟢", benefit: "Vitamin C powerhouse", image: "https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&w=300&q=80" }
     ],
 
     mealPlan: [
@@ -335,6 +347,7 @@ const HEALTH_DATA = {
         {
             name: "Diabetes",
             emoji: "🩸",
+            image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=600&q=80",
             overview: "A chronic condition affecting how your body processes blood sugar (glucose). Type 2 diabetes is the most common form.",
             causes: ["Insulin resistance", "Obesity", "Sedentary lifestyle", "Genetic factors", "Poor diet"],
             symptoms: ["Frequent urination", "Excessive thirst", "Unexplained weight loss", "Blurred vision", "Slow healing wounds", "Fatigue"],
@@ -344,6 +357,7 @@ const HEALTH_DATA = {
         {
             name: "Heart Disease",
             emoji: "❤️",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
             overview: "A range of conditions affecting the heart, including coronary artery disease, heart rhythm problems, and heart defects.",
             causes: ["High blood pressure", "High cholesterol", "Smoking", "Diabetes", "Obesity", "Stress"],
             symptoms: ["Chest pain or discomfort", "Shortness of breath", "Pain in neck, jaw, or back", "Lightheadedness", "Cold sweats", "Irregular heartbeat"],
@@ -353,6 +367,7 @@ const HEALTH_DATA = {
         {
             name: "Hypertension",
             emoji: "🫀",
+            image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=600&q=80",
             overview: "Persistently elevated blood pressure in the arteries. Known as the 'silent killer' as it often has no symptoms.",
             causes: ["Excess salt intake", "Obesity", "Stress", "Lack of exercise", "Genetics", "Alcohol consumption"],
             symptoms: ["Often no symptoms", "Headaches", "Dizziness", "Nosebleeds", "Shortness of breath", "Visual changes"],
@@ -362,6 +377,7 @@ const HEALTH_DATA = {
         {
             name: "Asthma",
             emoji: "🫁",
+            image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
             overview: "A condition where airways narrow, swell, and produce extra mucus, making breathing difficult.",
             causes: ["Allergens (dust, pollen, pet dander)", "Air pollution", "Respiratory infections", "Exercise", "Stress", "Cold air"],
             symptoms: ["Wheezing", "Shortness of breath", "Chest tightness", "Coughing (especially at night)", "Difficulty sleeping due to breathing"],
@@ -371,6 +387,7 @@ const HEALTH_DATA = {
         {
             name: "Dengue",
             emoji: "🦟",
+            image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
             overview: "A mosquito-borne viral infection transmitted by Aedes mosquitoes. Common in tropical and subtropical regions.",
             causes: ["Bite from infected Aedes mosquito", "Stagnant water (breeding ground)", "Tropical climate"],
             symptoms: ["High fever (104°F/40°C)", "Severe headache", "Pain behind eyes", "Joint & muscle pain", "Skin rash", "Mild bleeding (nose, gums)"],
@@ -380,6 +397,7 @@ const HEALTH_DATA = {
         {
             name: "Tuberculosis (TB)",
             emoji: "🦠",
+            image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=600&q=80",
             overview: "A bacterial infection (Mycobacterium tuberculosis) primarily affecting the lungs, spread through airborne droplets.",
             causes: ["Mycobacterium tuberculosis bacteria", "Close contact with infected person", "Weakened immune system", "Overcrowded living conditions"],
             symptoms: ["Persistent cough (3+ weeks)", "Coughing blood", "Night sweats", "Weight loss", "Fever", "Fatigue", "Chest pain"],
@@ -393,6 +411,7 @@ const HEALTH_DATA = {
         {
             title: "CPR (Cardiopulmonary Resuscitation)",
             emoji: "💓",
+            image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Check the scene for safety and check the person for responsiveness",
                 "Call emergency services (112) immediately",
@@ -408,6 +427,7 @@ const HEALTH_DATA = {
         {
             title: "Burns",
             emoji: "🔥",
+            image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Remove the person from the source of the burn",
                 "Cool the burn under cool running water for at least 20 minutes",
@@ -421,6 +441,7 @@ const HEALTH_DATA = {
         {
             title: "Choking",
             emoji: "😰",
+            image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Encourage the person to cough forcefully",
                 "If they can't cough, speak, or breathe — stand behind them",
@@ -435,6 +456,7 @@ const HEALTH_DATA = {
         {
             title: "Bleeding (Severe)",
             emoji: "🩸",
+            image: "https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Call emergency services (112)",
                 "Apply direct pressure to the wound using a clean cloth",
@@ -449,6 +471,7 @@ const HEALTH_DATA = {
         {
             title: "Fractures",
             emoji: "🦴",
+            image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Keep the injured area still — don't try to realign",
                 "Apply a splint to immobilize above and below the break",
@@ -462,6 +485,7 @@ const HEALTH_DATA = {
         {
             title: "Snake Bite",
             emoji: "🐍",
+            image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Move away from the snake — don't try to catch it",
                 "Keep the person calm and still",
@@ -476,6 +500,7 @@ const HEALTH_DATA = {
         {
             title: "Heart Attack",
             emoji: "💔",
+            image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Call 112 immediately",
                 "Have the person sit down in a comfortable position",
@@ -490,6 +515,7 @@ const HEALTH_DATA = {
         {
             title: "Electric Shock",
             emoji: "⚡",
+            image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
             steps: [
                 "Don't touch the person if they're still in contact with the source",
                 "Turn off the power source if possible",
@@ -545,6 +571,7 @@ const HEALTH_DATA = {
             name: "Mountain Pose",
             sanskrit: "Tadasana",
             emoji: "🏔️",
+            image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "30-60 sec",
             benefits: ["Improves posture", "Strengthens thighs & ankles", "Increases awareness"],
@@ -554,6 +581,7 @@ const HEALTH_DATA = {
             name: "Tree Pose",
             sanskrit: "Vrksasana",
             emoji: "🌳",
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "30 sec each side",
             benefits: ["Improves balance", "Strengthens legs", "Opens hips"],
@@ -563,6 +591,7 @@ const HEALTH_DATA = {
             name: "Warrior II",
             sanskrit: "Virabhadrasana II",
             emoji: "⚔️",
+            image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "30-45 sec each side",
             benefits: ["Strengthens legs & arms", "Opens hips & chest", "Builds stamina"],
@@ -572,6 +601,7 @@ const HEALTH_DATA = {
             name: "Downward Dog",
             sanskrit: "Adho Mukha Svanasana",
             emoji: "🐕",
+            image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "1-3 minutes",
             benefits: ["Stretches full body", "Strengthens arms & legs", "Calms the mind"],
@@ -581,6 +611,7 @@ const HEALTH_DATA = {
             name: "Cobra Pose",
             sanskrit: "Bhujangasana",
             emoji: "🐍",
+            image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "15-30 sec",
             benefits: ["Strengthens spine", "Opens chest & lungs", "Improves flexibility"],
@@ -590,6 +621,7 @@ const HEALTH_DATA = {
             name: "Child's Pose",
             sanskrit: "Balasana",
             emoji: "🧒",
+            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80",
             difficulty: "beginner",
             duration: "1-3 minutes",
             benefits: ["Resting pose", "Relieves stress", "Stretches back & hips"],
@@ -599,6 +631,7 @@ const HEALTH_DATA = {
             name: "Chair Pose",
             sanskrit: "Utkatasana",
             emoji: "🪑",
+            image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=600&q=80",
             difficulty: "intermediate",
             duration: "30-60 sec",
             benefits: ["Strengthens legs & core", "Builds endurance", "Stimulates heart"],
@@ -608,6 +641,7 @@ const HEALTH_DATA = {
             name: "Triangle Pose",
             sanskrit: "Trikonasana",
             emoji: "📐",
+            image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80",
             difficulty: "intermediate",
             duration: "30 sec each side",
             benefits: ["Stretches hamstrings", "Opens hips & chest", "Improves digestion"],
@@ -661,6 +695,7 @@ const HEALTH_DATA = {
             categoryColor: "teal",
             readTime: "5 min read",
             emoji: "🌟",
+            image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=600&q=80",
             excerpt: "Small, consistent habits can transform your health. From morning routines to evening wind-downs, discover the 10 habits that science says will make you healthier.",
             content: `<h3>1. Start Your Day with Water</h3><p>Drink a glass of water first thing in the morning to rehydrate your body and kickstart your metabolism. Adding lemon can aid digestion.</p>
 <h3>2. Move for 30 Minutes Daily</h3><p>You don't need an intense gym session. A brisk walk, yoga, or cycling counts. The key is consistency, not intensity.</p>
@@ -679,6 +714,7 @@ const HEALTH_DATA = {
             categoryColor: "rose",
             readTime: "4 min read",
             emoji: "❤️",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
             excerpt: "Blood pressure readings can be confusing. Learn what systolic and diastolic numbers mean, what's normal, and when to be concerned.",
             content: `<h3>What Do the Numbers Mean?</h3><p><strong>Systolic (top number):</strong> Pressure when your heart beats.<br><strong>Diastolic (bottom number):</strong> Pressure when your heart rests between beats.</p>
 <h3>Blood Pressure Categories</h3><p><strong>Normal:</strong> Less than 120/80 mmHg<br><strong>Elevated:</strong> 120-129 / less than 80<br><strong>High (Stage 1):</strong> 130-139 / 80-89<br><strong>High (Stage 2):</strong> 140+ / 90+<br><strong>Crisis:</strong> Above 180/120 — seek emergency care!</p>
@@ -690,6 +726,7 @@ const HEALTH_DATA = {
             categoryColor: "amber",
             readTime: "6 min read",
             emoji: "⏰",
+            image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80",
             excerpt: "Intermittent fasting is more than a trend — it's backed by science. Learn about different fasting methods and their proven health benefits.",
             content: `<h3>What is Intermittent Fasting?</h3><p>It's not about what you eat, but when you eat. IF cycles between periods of eating and fasting.</p>
 <h3>Popular Methods</h3><p><strong>16:8 Method:</strong> Fast for 16 hours, eat within an 8-hour window. Most popular and beginner-friendly.<br><strong>5:2 Method:</strong> Eat normally 5 days, limit to 500-600 calories on 2 days.<br><strong>Eat-Stop-Eat:</strong> 24-hour fast once or twice a week.</p>
@@ -702,6 +739,7 @@ const HEALTH_DATA = {
             categoryColor: "emerald",
             readTime: "5 min read",
             emoji: "🧠",
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=600&q=80",
             excerpt: "Exercise isn't just for your body — it's the single best thing you can do for your brain. Learn how physical activity boosts memory, mood, and cognition.",
             content: `<h3>The Brain-Exercise Connection</h3><p>Exercise increases blood flow to the brain and triggers the release of BDNF (Brain-Derived Neurotrophic Factor), which helps grow new brain cells.</p>
 <h3>Key Benefits</h3><p><strong>Better Memory:</strong> Exercise grows the hippocampus — the brain's memory center.<br><strong>Reduced Anxiety:</strong> Lowers cortisol levels and increases endorphins.<br><strong>Improved Focus:</strong> Enhances prefrontal cortex function.<br><strong>Better Sleep:</strong> Regulates your circadian rhythm.</p>
@@ -713,6 +751,7 @@ const HEALTH_DATA = {
             categoryColor: "amber",
             readTime: "4 min read",
             emoji: "🥗",
+            image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
             excerpt: "Superfoods are nutrient-dense foods that pack a powerful health punch. Here are the top superfoods backed by nutrition science.",
             content: `<h3>What Makes a Superfood?</h3><p>Superfoods are exceptionally rich in vitamins, minerals, antioxidants, and other beneficial compounds per serving.</p>
 <h3>Top Superfoods</h3><p><strong>Blueberries:</strong> Highest antioxidant levels among common fruits.<br><strong>Salmon:</strong> Rich in omega-3 fatty acids for heart and brain health.<br><strong>Turmeric:</strong> Contains curcumin, a powerful anti-inflammatory compound.<br><strong>Spinach:</strong> Loaded with iron, vitamins A, C, K, and folate.<br><strong>Chia Seeds:</strong> Complete protein with fiber and omega-3s.</p>

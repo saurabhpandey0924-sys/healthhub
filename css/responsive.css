@@ -41,6 +41,11 @@
         height: 300px;
     }
 
+    .hero-image-frame {
+        width: 340px;
+        height: 400px;
+    }
+
     .calc-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -139,12 +144,51 @@
         height: 250px;
     }
 
-    .hero-float-icon {
-        font-size: 24px;
+    .hero-showcase {
+        max-width: 330px;
     }
 
-    .hero-center-icon {
-        font-size: 48px;
+    .hero-image-frame {
+        width: 290px;
+        height: 350px;
+        border-radius: 22px;
+    }
+
+    .hero-pill-badge {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .pill-icon {
+        font-size: 18px;
+    }
+
+    .pill-title {
+        font-size: 9px;
+    }
+
+    .pill-value {
+        font-size: 11px;
+    }
+
+    .pill-top-left {
+        top: -12px;
+        left: -10px;
+    }
+
+    .pill-top-right {
+        top: 25px;
+        right: -15px;
+    }
+
+    .pill-bottom-left {
+        bottom: 30px;
+        left: -15px;
+    }
+
+    .pill-bottom-right {
+        bottom: -12px;
+        right: -5px;
     }
 
     /* Grids */
@@ -262,10 +306,35 @@
         min-width: unset;
         max-width: unset;
     }
+
+    .section-photo-banner {
+        height: 190px;
+        margin-bottom: var(--space-6);
+    }
+
+    .section-banner-overlay {
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .section-banner-overlay h3 {
+        font-size: var(--fs-base);
+    }
+
+    .section-banner-overlay p {
+        font-size: var(--fs-xs);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
 
 /* ---- Mobile Phones ---- */
 @media (max-width: 480px) {
+    .auth-nav-btn {
+        display: none;
+    }
+
     :root {
         --fs-6xl: 2rem;
         --fs-5xl: 1.75rem;

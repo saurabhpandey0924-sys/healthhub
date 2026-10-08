@@ -200,7 +200,11 @@ function renderExercises(filter = 'all') {
 
     grid.innerHTML = filtered.map((ex, i) => `
         <div class="exercise-card animate-on-scroll hover-lift" onclick="openExerciseModal(${HEALTH_DATA.exercises.indexOf(ex)})" style="cursor:pointer">
-            <div class="exercise-image">${ex.emoji}</div>
+            <div class="exercise-image">
+                <img src="${ex.image}" alt="${ex.name}" loading="lazy" class="card-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="fallback-emoji-icon" style="display:none">${ex.emoji}</div>
+                <div class="card-img-badge">${ex.emoji}</div>
+            </div>
             <div class="exercise-body">
                 <div class="exercise-meta">
                     <span class="exercise-difficulty difficulty-${ex.difficulty}">${ex.difficulty}</span>
@@ -235,7 +239,10 @@ function openExerciseModal(index) {
     const ex = HEALTH_DATA.exercises[index];
     document.getElementById('exercise-modal-title').textContent = `${ex.emoji} ${ex.name}`;
     document.getElementById('exercise-modal-body').innerHTML = `
-        <div style="margin-bottom:16px">
+        <div class="modal-cover-wrap">
+            <img src="${ex.image}" alt="${ex.name}" class="modal-cover-photo" onerror="this.style.display='none';">
+        </div>
+        <div style="margin-bottom:16px;margin-top:16px;">
             <span class="exercise-difficulty difficulty-${ex.difficulty}" style="margin-right:8px">${ex.difficulty}</span>
             <span class="tag tag-teal">${ex.muscle}</span>
         </div>
@@ -290,8 +297,11 @@ function renderFoods(category = 'proteins') {
     const grid = document.getElementById('food-grid');
     const foods = HEALTH_DATA.foods[category] || [];
     grid.innerHTML = foods.map(f => `
-        <div class="food-card">
-            <div class="food-emoji">${f.emoji}</div>
+        <div class="food-card hover-lift">
+            <div class="food-thumb-wrap">
+                <img src="${f.image}" alt="${f.name}" loading="lazy" class="food-thumb-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="food-thumb-fallback" style="display:none">${f.emoji}</div>
+            </div>
             <div class="food-info">
                 <div class="food-name">${f.name}</div>
                 <div class="food-nutrients">${f.nutrients}</div>
@@ -313,7 +323,10 @@ document.getElementById('food-tabs').addEventListener('click', (e) => {
 function renderSuperfoods() {
     document.getElementById('superfood-grid').innerHTML = HEALTH_DATA.superfoods.map(s => `
         <div class="superfood-item hover-lift">
-            <div class="superfood-emoji">${s.emoji}</div>
+            <div class="superfood-img-wrapper">
+                <img src="${s.image}" alt="${s.name}" loading="lazy" class="superfood-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="superfood-fallback" style="display:none">${s.emoji}</span>
+            </div>
             <div class="superfood-name">${s.name}</div>
             <div class="superfood-benefit">${s.benefit}</div>
         </div>
@@ -448,7 +461,10 @@ function renderFirstAid() {
             </div>
             <div class="accordion-body">
                 <div class="accordion-content">
-                    <h4 style="margin-bottom:12px;font-family:var(--font-heading)">📋 Steps:</h4>
+                    <div class="first-aid-photo-banner">
+                        <img src="${fa.image}" alt="${fa.title}" loading="lazy" class="first-aid-img" onerror="this.style.display='none'">
+                    </div>
+                    <h4 style="margin-bottom:12px;font-family:var(--font-heading)">📋 Immediate Steps:</h4>
                     <ol style="padding-left:20px;margin-bottom:20px">
                         ${fa.steps.map(step => `<li style="padding:6px 0;color:var(--text-secondary);font-size:14px">${step}</li>`).join('')}
                     </ol>
@@ -493,12 +509,15 @@ document.getElementById('first-aid-search').addEventListener('input', (e) => {
 // ─────── RENDER DISEASES ───────
 function renderDiseases() {
     document.getElementById('disease-grid').innerHTML = HEALTH_DATA.diseases.map(d => `
-        <div class="disease-card animate-on-scroll">
+        <div class="disease-card animate-on-scroll hover-lift">
+            <div class="disease-cover-wrap">
+                <img src="${d.image}" alt="${d.name}" loading="lazy" class="disease-cover-img" onerror="this.style.display='none'">
+                <div class="disease-cover-badge">${d.emoji}</div>
+            </div>
             <div class="disease-header">
-                <div class="disease-icon">${d.emoji}</div>
                 <div>
                     <div class="disease-name">${d.name}</div>
-                    <div style="font-size:var(--fs-sm);color:var(--text-secondary)">${d.overview.substring(0, 80)}...</div>
+                    <div style="font-size:var(--fs-sm);color:var(--text-secondary)">${d.overview.substring(0, 95)}...</div>
                 </div>
             </div>
             <div class="disease-body">
@@ -589,13 +608,19 @@ function toggleCheck(el, index) {
 function renderYoga() {
     document.getElementById('yoga-grid').innerHTML = HEALTH_DATA.yogaPoses.map((pose, i) => `
         <div class="yoga-card animate-on-scroll hover-lift" style="cursor:pointer" onclick="openYogaModal(${i})">
-            <div class="yoga-pose-icon">${pose.emoji}</div>
-            <div class="yoga-pose-name">${pose.name}</div>
-            <div class="yoga-pose-sanskrit">${pose.sanskrit}</div>
-            <div class="yoga-pose-level">
-                <span class="exercise-difficulty difficulty-${pose.difficulty}">${pose.difficulty}</span>
+            <div class="yoga-image">
+                <img src="${pose.image}" alt="${pose.name}" loading="lazy" class="card-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="fallback-emoji-icon" style="display:none">${pose.emoji}</div>
+                <div class="card-img-badge">${pose.emoji}</div>
             </div>
-            <div style="font-size:var(--fs-xs);color:var(--text-muted)">⏱ ${pose.duration}</div>
+            <div class="yoga-card-body">
+                <div class="yoga-pose-name">${pose.name}</div>
+                <div class="yoga-pose-sanskrit">${pose.sanskrit}</div>
+                <div class="yoga-pose-level">
+                    <span class="exercise-difficulty difficulty-${pose.difficulty}">${pose.difficulty}</span>
+                </div>
+                <div style="font-size:var(--fs-xs);color:var(--text-muted)">⏱ ${pose.duration}</div>
+            </div>
         </div>
     `).join('');
 
@@ -613,7 +638,10 @@ function openYogaModal(index) {
     const pose = HEALTH_DATA.yogaPoses[index];
     document.getElementById('yoga-modal-title').textContent = `${pose.emoji} ${pose.name} (${pose.sanskrit})`;
     document.getElementById('yoga-modal-body').innerHTML = `
-        <div style="margin-bottom:16px">
+        <div class="modal-cover-wrap">
+            <img src="${pose.image}" alt="${pose.name}" class="modal-cover-photo" onerror="this.style.display='none';">
+        </div>
+        <div style="margin-bottom:16px;margin-top:16px;">
             <span class="exercise-difficulty difficulty-${pose.difficulty}">${pose.difficulty}</span>
             <span style="margin-left:8px;font-size:var(--fs-sm);color:var(--text-muted)">⏱ ${pose.duration}</span>
         </div>
@@ -706,8 +734,12 @@ function resetMeditation() {
 // ─────── RENDER BLOG ───────
 function renderBlog() {
     document.getElementById('blog-grid').innerHTML = HEALTH_DATA.articles.map((article, i) => `
-        <div class="blog-card animate-on-scroll" onclick="openArticleModal(${i})">
-            <div class="blog-image">${article.emoji}</div>
+        <div class="blog-card animate-on-scroll hover-lift" onclick="openArticleModal(${i})">
+            <div class="blog-image">
+                <img src="${article.image}" alt="${article.title}" loading="lazy" class="card-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="fallback-emoji-icon" style="display:none">${article.emoji}</div>
+                <div class="card-img-badge">${article.emoji}</div>
+            </div>
             <div class="blog-body">
                 <div class="blog-meta">
                     <span class="blog-category tag tag-${article.categoryColor}">${article.category}</span>
@@ -724,7 +756,10 @@ function openArticleModal(index) {
     const article = HEALTH_DATA.articles[index];
     document.getElementById('article-modal-title').textContent = article.title;
     document.getElementById('article-modal-body').innerHTML = `
-        <div style="margin-bottom:16px">
+        <div class="modal-cover-wrap">
+            <img src="${article.image}" alt="${article.title}" class="modal-cover-photo" onerror="this.style.display='none';">
+        </div>
+        <div style="margin-bottom:16px;margin-top:16px;">
             <span class="blog-category tag tag-${article.categoryColor}">${article.category}</span>
             <span style="margin-left:8px;font-size:var(--fs-sm);color:var(--text-muted)">${article.readTime}</span>
         </div>
@@ -846,6 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderYoga();
     renderBlog();
     updateDashboard();
+    checkAuthState();
 
     // Re-observe all animate-on-scroll elements
     setTimeout(() => {
@@ -855,12 +891,216 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
+// ─────── AUTHENTICATION SYSTEM ───────
+let currentUser = null;
+
+function checkAuthState() {
+    try {
+        const stored = localStorage.getItem('healthhub_user');
+        if (stored) {
+            currentUser = JSON.parse(stored);
+            updateAuthUI(currentUser);
+        } else {
+            currentUser = null;
+            updateAuthUI(null);
+        }
+    } catch (e) {
+        currentUser = null;
+        updateAuthUI(null);
+    }
+}
+
+function updateAuthUI(user) {
+    const navBtnLabel = document.getElementById('authBtnLabel');
+    const authNavBtn = document.getElementById('authNavBtn');
+    const mobileBtnLabel = document.getElementById('authMobileBtnLabel');
+    
+    if (user) {
+        const shortName = user.name ? user.name.split(' ')[0] : 'Member';
+        if (navBtnLabel) navBtnLabel.textContent = shortName;
+        if (authNavBtn) authNavBtn.classList.add('logged-in');
+        if (mobileBtnLabel) mobileBtnLabel.textContent = `Profile (${shortName})`;
+    } else {
+        if (navBtnLabel) navBtnLabel.textContent = 'Sign In';
+        if (authNavBtn) authNavBtn.classList.remove('logged-in');
+        if (mobileBtnLabel) mobileBtnLabel.textContent = 'Sign In / Register';
+    }
+}
+
+function openAuthModal() {
+    const modal = document.getElementById('authModal');
+    const overlay = document.getElementById('authOverlay');
+    if (!modal || !overlay) return;
+
+    if (currentUser) {
+        // Show Profile Card
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerForm').style.display = 'none';
+        document.querySelector('.auth-tabs').style.display = 'none';
+        document.querySelector('.auth-demo-banner').style.display = 'none';
+        document.getElementById('authModalTitle').textContent = 'My HealthHub Profile';
+        
+        const profileCard = document.getElementById('authProfileCard');
+        if (profileCard) {
+            profileCard.style.display = 'block';
+            document.getElementById('profileName').textContent = currentUser.name || 'Member';
+            document.getElementById('profileEmail').textContent = currentUser.email || 'user@healthhub.com';
+            document.getElementById('profileGoal').textContent = currentUser.goalLabel || 'Fitness & Vitality';
+            document.getElementById('profileAvatar').textContent = currentUser.avatar || '🌱';
+        }
+    } else {
+        // Show Login / Register
+        document.querySelector('.auth-tabs').style.display = 'flex';
+        document.querySelector('.auth-demo-banner').style.display = 'block';
+        document.getElementById('authProfileCard').style.display = 'none';
+        switchAuthTab('login');
+    }
+
+    overlay.classList.add('active');
+    modal.classList.add('active');
+}
+
+function closeAuthModal() {
+    const modal = document.getElementById('authModal');
+    const overlay = document.getElementById('authOverlay');
+    if (modal) modal.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+}
+
+function switchAuthTab(mode) {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const tabSignIn = document.getElementById('tabSignInBtn');
+    const tabSignUp = document.getElementById('tabSignUpBtn');
+    const title = document.getElementById('authModalTitle');
+
+    if (mode === 'login') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        tabSignIn.classList.add('active');
+        tabSignUp.classList.remove('active');
+        if (title) title.textContent = 'Welcome Back';
+    } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        tabSignIn.classList.remove('active');
+        tabSignUp.classList.add('active');
+        if (title) title.textContent = 'Create Health Account';
+    }
+}
+
+function handleLogin(e) {
+    if (e) e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    if (!email || !password) {
+        showToast('Please enter both email and password', 'warning');
+        return;
+    }
+
+    const name = email.split('@')[0];
+    const user = {
+        name: name.charAt(0).toUpperCase() + name.slice(1),
+        email: email,
+        goalLabel: 'Overall Longevity & Wellness',
+        avatar: '💚',
+        loginTime: new Date().toISOString()
+    };
+
+    localStorage.setItem('healthhub_user', JSON.stringify(user));
+    currentUser = user;
+    updateAuthUI(user);
+    closeAuthModal();
+    showToast(`Welcome back, ${user.name}! 🌟`, 'success');
+}
+
+function handleRegister(e) {
+    if (e) e.preventDefault();
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const confirmPassword = document.getElementById('regConfirmPassword').value;
+    const goalSelect = document.getElementById('regGoal');
+    const goalLabel = goalSelect.options[goalSelect.selectedIndex].text;
+
+    if (!name || !email || !password) {
+        showToast('Please fill out all required fields', 'warning');
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        showToast('Passwords do not match. Please verify.', 'error');
+        return;
+    }
+
+    const user = {
+        name: name,
+        email: email,
+        goalLabel: goalLabel,
+        avatar: '✨',
+        loginTime: new Date().toISOString()
+    };
+
+    localStorage.setItem('healthhub_user', JSON.stringify(user));
+    currentUser = user;
+    updateAuthUI(user);
+    closeAuthModal();
+    showToast(`Account created! Welcome to HealthHub, ${user.name}! 🎉`, 'success');
+}
+
+function handleDemoLogin() {
+    const demoUser = {
+        name: 'Alex Mercer',
+        email: 'alex.mercer@healthhub.org',
+        goalLabel: '🏃 Build Fitness & Stamina',
+        avatar: '⚡',
+        loginTime: new Date().toISOString()
+    };
+    localStorage.setItem('healthhub_user', JSON.stringify(demoUser));
+    currentUser = demoUser;
+    updateAuthUI(demoUser);
+    closeAuthModal();
+    showToast(`Logged in as Alex Mercer (Demo Account) 🚀`, 'success');
+}
+
+function handleLogout() {
+    localStorage.removeItem('healthhub_user');
+    currentUser = null;
+    updateAuthUI(null);
+    closeAuthModal();
+    showToast('You have signed out successfully.', 'info');
+}
+
+function handleForgotPassword(e) {
+    if (e) e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    if (email) {
+        showToast(`Password reset link dispatched to ${email} 📩`, 'info');
+    } else {
+        showToast('Please enter your email above to receive a reset link.', 'warning');
+    }
+}
+
+function togglePasswordVisibility(inputId, btn) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = '🙈';
+    } else {
+        input.type = 'password';
+        btn.textContent = '👁️';
+    }
+}
+
 // Close modals on Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeArticleModal();
         closeYogaModal();
         closeExerciseModal();
+        closeAuthModal();
     }
 });
 

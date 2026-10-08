@@ -74,6 +74,9 @@
                 
                 
 
+                <button class="btn btn-outline btn-sm auth-nav-btn" id="authNavBtn" onclick="openAuthModal()" aria-label="Account">
+                    <span class="auth-btn-icon">👤</span> <span id="authBtnLabel">Sign In</span>
+                </button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -96,6 +99,9 @@
         <a href="#" onclick="navigateTo('sleep'); return false;" class="nav-link" data-section="sleep" data-i18n="nav_sleep">Sleep</a>
         <a href="#" onclick="navigateTo('yoga'); return false;" class="nav-link" data-section="yoga" data-i18n="nav_yoga">Yoga</a>
         <a href="#" onclick="navigateTo('blog'); return false;" class="nav-link" data-section="blog" data-i18n="nav_blog">Blog</a>
+        <button class="btn btn-primary auth-mobile-btn" id="authMobileBtn" onclick="openAuthModal()" style="margin-top:16px;width:100%">
+            <span class="auth-btn-icon">👤</span> <span id="authMobileBtnLabel">Sign In / Register</span>
+        </button>
     </div>
 
     <!-- ==================== HERO SECTION ==================== -->
@@ -133,14 +139,40 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-orb">
-                    <div class="hero-float-icon">💪</div>
-                    <div class="hero-float-icon">🧠</div>
-                    <div class="hero-float-icon">🥗</div>
-                    <div class="hero-float-icon">🧘</div>
-                    <div class="hero-float-icon">😴</div>
-                    <div class="hero-float-icon">💊</div>
-                    <div class="hero-center-icon">❤️</div>
+                <div class="hero-showcase">
+                    <div class="hero-image-frame">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Active and Healthy Lifestyle" class="hero-main-photo" loading="eager">
+                        <div class="hero-photo-glow"></div>
+                    </div>
+                    <!-- Floating Vital Badges -->
+                    <div class="hero-pill-badge pill-top-left">
+                        <span class="pill-icon">💧</span>
+                        <div>
+                            <div class="pill-title">Daily Hydration</div>
+                            <div class="pill-value">2.4L / 3.0L</div>
+                        </div>
+                    </div>
+                    <div class="hero-pill-badge pill-top-right">
+                        <span class="pill-icon">❤️</span>
+                        <div>
+                            <div class="pill-title">Resting Pulse</div>
+                            <div class="pill-value">68 BPM Normal</div>
+                        </div>
+                    </div>
+                    <div class="hero-pill-badge pill-bottom-left">
+                        <span class="pill-icon">🧘</span>
+                        <div>
+                            <div class="pill-title">Mindfulness</div>
+                            <div class="pill-value">15 min Today</div>
+                        </div>
+                    </div>
+                    <div class="hero-pill-badge pill-bottom-right">
+                        <span class="pill-icon">⭐</span>
+                        <div>
+                            <div class="pill-title">Vitality Score</div>
+                            <div class="pill-value">94% Healthy</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -614,6 +646,16 @@
                 <p class="section-subtitle">Your mental health matters. Explore tools, tips, and resources for a calmer mind.</p>
             </div>
 
+            <!-- Mind Visual Showcase Banner -->
+            <div class="section-photo-banner animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Mindful Calm Meditation in Nature" class="section-banner-img" loading="lazy">
+                <div class="section-banner-overlay">
+                    <span class="banner-pill">🌿 Mind Sanctuary</span>
+                    <h3>Ground Your Thoughts & Reclaim Calm</h3>
+                    <p>Mindful conscious breathing lowers cortisol levels within 90 seconds, activating your restorative parasympathetic nervous system.</p>
+                </div>
+            </div>
+
             <!-- Daily Affirmation -->
             <div class="affirmation-card animate-on-scroll">
                 <p style="font-size:var(--fs-sm);color:var(--accent-violet);margin-bottom:8px">✨ Today's Affirmation</p>
@@ -729,6 +771,16 @@
                 <div class="section-badge" style="background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.2);color:var(--accent-sky)">😴 Sleep</div>
                 <h2 class="section-title" style="background:var(--gradient-health);-webkit-background-clip:text;background-clip:text">Sleep Health</h2>
                 <p class="section-subtitle">Quality sleep is the foundation of good health. Learn how to optimize your rest.</p>
+            </div>
+
+            <!-- Sleep Visual Showcase Banner -->
+            <div class="section-photo-banner animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1200&q=80" alt="Calm Restful Bedroom for Quality Sleep" class="section-banner-img" loading="lazy">
+                <div class="section-banner-overlay">
+                    <span class="banner-pill">🌙 Rest & Recovery</span>
+                    <h3>Deep Rest Powers Immune Defense & Vitality</h3>
+                    <p>Creating an optimal dark, cool sleep environment improves deep REM cycles and morning cognitive clarity.</p>
+                </div>
             </div>
 
             <!-- Sleep Hours Chart -->
@@ -937,6 +989,146 @@
             <button class="modal-close" onclick="closeExerciseModal()">&times;</button>
         </div>
         <div class="modal-body" id="exercise-modal-body"></div>
+    </div>
+
+    <!-- ==================== AUTH MODAL (LOGIN / REGISTER / PROFILE) ==================== -->
+    <div class="modal-overlay" id="authOverlay" onclick="closeAuthModal()"></div>
+    <div class="modal auth-modal" id="authModal">
+        <div class="modal-header auth-modal-header">
+            <div class="auth-header-brand">
+                <span class="auth-logo-icon">💚</span>
+                <div>
+                    <h3 class="modal-title auth-title" id="authModalTitle">Welcome to HealthHub</h3>
+                    <p class="auth-subtitle">Your personal health & wellness sanctuary</p>
+                </div>
+            </div>
+            <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+        </div>
+        <div class="modal-body auth-modal-body">
+            <!-- Auth Tab Switcher -->
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" id="tabSignInBtn" onclick="switchAuthTab('login')">Sign In</button>
+                <button type="button" class="auth-tab-btn" id="tabSignUpBtn" onclick="switchAuthTab('register')">Create Account</button>
+            </div>
+
+            <!-- Quick Demo Login Banner -->
+            <div class="auth-demo-banner">
+                <div class="demo-badge">🚀 Instant Demo</div>
+                <div class="demo-text">Explore all features immediately without typing credentials</div>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="handleDemoLogin()">1-Click Demo Login</button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Email Address or Username</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon">✉️</span>
+                        <input type="text" id="loginEmail" class="form-input auth-input" placeholder="e.g. alex@healthhub.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+                        <label class="form-label" for="loginPassword" style="margin-bottom:0">Password</label>
+                        <a href="#" onclick="handleForgotPassword(event); return false;" class="auth-forgot-link">Forgot password?</a>
+                    </div>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon">🔒</span>
+                        <input type="password" id="loginPassword" class="form-input auth-input" placeholder="Enter your password" required>
+                        <button type="button" class="auth-pw-toggle" onclick="togglePasswordVisibility('loginPassword', this)">👁️</button>
+                    </div>
+                </div>
+                <div class="auth-options">
+                    <label class="auth-checkbox-label">
+                        <input type="checkbox" id="rememberMe" checked>
+                        <span>Remember me on this browser</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block auth-submit-btn">
+                    <span>Sign In to HealthHub</span> →
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form" style="display:none" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label" for="regName">Full Name</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon">👤</span>
+                        <input type="text" id="regName" class="form-input auth-input" placeholder="e.g. Alex Mercer" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="regEmail">Email Address</label>
+                    <div class="auth-input-wrapper">
+                        <span class="auth-input-icon">✉️</span>
+                        <input type="email" id="regEmail" class="form-input auth-input" placeholder="e.g. alex@healthhub.com" required>
+                    </div>
+                </div>
+                <div class="form-row" style="display:flex;gap:12px">
+                    <div class="form-group" style="flex:1">
+                        <label class="form-label" for="regPassword">Password</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon">🔒</span>
+                            <input type="password" id="regPassword" class="form-input auth-input" placeholder="Min 6 chars" minlength="6" required>
+                            <button type="button" class="auth-pw-toggle" onclick="togglePasswordVisibility('regPassword', this)">👁️</button>
+                        </div>
+                    </div>
+                    <div class="form-group" style="flex:1">
+                        <label class="form-label" for="regConfirmPassword">Confirm</label>
+                        <div class="auth-input-wrapper">
+                            <span class="auth-input-icon">🔒</span>
+                            <input type="password" id="regConfirmPassword" class="form-input auth-input" placeholder="Repeat password" minlength="6" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="regGoal">Primary Wellness Goal</label>
+                    <select id="regGoal" class="form-input auth-input">
+                        <option value="fitness">🏃 Build Fitness & Stamina</option>
+                        <option value="weight_loss">⚖️ Healthy Weight Loss</option>
+                        <option value="muscle">💪 Strength & Muscle Tone</option>
+                        <option value="mindfulness">🧘 Mind Balance & Stress Relief</option>
+                        <option value="nutrition">🥗 Clean Eating & Vitality</option>
+                    </select>
+                </div>
+                <div class="auth-options">
+                    <label class="auth-checkbox-label">
+                        <input type="checkbox" id="regAgree" required checked>
+                        <span>I agree to HealthHub Community Guidelines</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block auth-submit-btn">
+                    <span>Create Free Account</span> →
+                </button>
+            </form>
+
+            <!-- User Profile Card (When logged in) -->
+            <div id="authProfileCard" class="auth-profile-card" style="display:none">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">👤</div>
+                    <div class="profile-meta">
+                        <h4 class="profile-name" id="profileName">User Name</h4>
+                        <p class="profile-email" id="profileEmail">user@example.com</p>
+                        <span class="tag tag-teal" id="profileGoal">Fitness Enthusiast</span>
+                    </div>
+                </div>
+                <div class="profile-stats-mini">
+                    <div class="profile-stat-box">
+                        <div class="profile-stat-num">Active</div>
+                        <div class="profile-stat-lbl">Account Status</div>
+                    </div>
+                    <div class="profile-stat-box">
+                        <div class="profile-stat-num">Verified</div>
+                        <div class="profile-stat-lbl">Health Passport</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:20px">
+                    <button type="button" class="btn btn-outline" style="flex:1" onclick="closeAuthModal()">Close</button>
+                    <button type="button" class="btn btn-secondary" style="flex:1" onclick="handleLogout()">Sign Out</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
